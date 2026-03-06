@@ -1,0 +1,5 @@
+node_modules/
+Torque/
+.vscode/
+.gemini/
+agents.md
