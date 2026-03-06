@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { festInfo } from '../data/data.js';
 
 
+// ============================================
+// COUNTDOWN TIMER - TEMPORARILY HIDDEN
+// ============================================
+// Uncomment this section when you want to show the countdown timer
+
+/*
 // Countdown Timer Component
 const CountdownTimer = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -68,20 +74,16 @@ const CountdownTimer = ({ targetDate }) => {
     </div>
   );
 };
+*/
+
+// ============================================
+// END COUNTDOWN TIMER
+// ============================================
 
 // Main Hero Component
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Gears Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-10">
-        <div className="gear-container">
-          <div className="gear gear-1"></div>
-          <div className="gear gear-2"></div>
-          <div className="gear gear-3"></div>
-        </div>
-      </div>
-
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ paddingTop: '100px' }}>
       {/* Content Overlay */}
       <div className="relative z-10 w-full px-4 py-20">
         <motion.div
@@ -164,25 +166,69 @@ const Hero = () => {
             {festInfo.title}
           </motion.h1>
 
-          {/* Coming Soon & Countdown Banner */}
+          {/* Coming Soon Banner - Mechanical Industrial Design */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
             className="mb-12 flex flex-col items-center gap-6"
           >
+            {/* Industrial Warning Stripe Banner */}
             <div
-              className="neu-card px-12 py-6 inline-block"
+              className="relative inline-block"
+              style={{
+                background: '#1a1a1a',
+                borderRadius: '8px',
+                border: '3px solid #d4af37',
+                boxShadow: `
+                  0 0 20px rgba(212, 175, 55, 0.3),
+                  inset 0 2px 4px rgba(0, 0, 0, 0.5)
+                `,
+                position: 'relative',
+                overflow: 'hidden'
+              }}
             >
-              <div 
-                className="text-3xl md:text-5xl font-bold text-gold tracking-widest mb-4 text-center"
+              {/* Warning Stripes Background */}
+              <div
                 style={{
-                  textShadow: '0 0 20px rgba(212,175,55,0.3)'
+                  position: 'absolute',
+                  inset: 0,
+                  background: `repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(212, 175, 55, 0.05) 20px,
+                    rgba(212, 175, 55, 0.05) 40px
+                  )`,
+                  pointerEvents: 'none'
+                }}
+              ></div>
+
+              {/* Rivets/Bolts in corners */}
+              <div style={{ position: 'absolute', top: '8px', left: '8px', width: '12px', height: '12px', borderRadius: '50%', background: 'radial-gradient(circle, #888 30%, #333 70%)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)' }}></div>
+              <div style={{ position: 'absolute', top: '8px', right: '8px', width: '12px', height: '12px', borderRadius: '50%', background: 'radial-gradient(circle, #888 30%, #333 70%)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)' }}></div>
+              <div style={{ position: 'absolute', bottom: '8px', left: '8px', width: '12px', height: '12px', borderRadius: '50%', background: 'radial-gradient(circle, #888 30%, #333 70%)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)' }}></div>
+              <div style={{ position: 'absolute', bottom: '8px', right: '8px', width: '12px', height: '12px', borderRadius: '50%', background: 'radial-gradient(circle, #888 30%, #333 70%)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)' }}></div>
+
+              {/* Coming Soon Text */}
+              <div 
+                className="relative px-12 md:px-20 py-6 md:py-8 text-2xl md:text-5xl font-bold tracking-widest text-center"
+                style={{
+                  color: '#d4af37',
+                  textShadow: `
+                    0 0 10px rgba(212, 175, 55, 0.8),
+                    0 0 20px rgba(212, 175, 55, 0.5),
+                    2px 2px 4px rgba(0, 0, 0, 0.8)
+                  `,
+                  letterSpacing: '0.2em',
+                  fontFamily: 'monospace'
                 }}
               >
-                COMING SOON
+                ⚠ COMING SOON ⚠
               </div>
-              <CountdownTimer targetDate={festInfo.festDate} />
+
+              {/* Countdown Timer - Temporarily Hidden */}
+              {/* <CountdownTimer targetDate={festInfo.festDate} /> */}
             </div>
           </motion.div>
 
@@ -203,80 +249,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Gear Animation Styles */}
-      <style jsx>{`
-        .gear-container {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-        }
-
-        .gear {
-          position: absolute;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23d4af37' d='M50 10 L55 25 L70 25 L58 35 L63 50 L50 40 L37 50 L42 35 L30 25 L45 25 Z M50 50 L55 65 L70 65 L58 75 L63 90 L50 80 L37 90 L42 75 L30 65 L45 65 Z M10 50 L25 55 L25 70 L35 58 L50 63 L40 50 L50 37 L35 42 L25 30 L25 45 Z M90 50 L75 55 L75 70 L65 58 L50 63 L60 50 L50 37 L65 42 L75 30 L75 45 Z'/%3E%3C/svg%3E");
-          background-size: contain;
-          background-repeat: no-repeat;
-          opacity: 0.15;
-        }
-
-        .gear-1 {
-          width: 300px;
-          height: 300px;
-          top: 10%;
-          left: 10%;
-          animation: rotate-clockwise 20s linear infinite;
-        }
-
-        .gear-2 {
-          width: 200px;
-          height: 200px;
-          bottom: 15%;
-          right: 15%;
-          animation: rotate-counter-clockwise 15s linear infinite;
-        }
-
-        .gear-3 {
-          width: 150px;
-          height: 150px;
-          top: 60%;
-          left: 70%;
-          animation: rotate-clockwise 25s linear infinite;
-        }
-
-        @keyframes rotate-clockwise {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        @keyframes rotate-counter-clockwise {
-          from {
-            transform: rotate(360deg);
-          }
-          to {
-            transform: rotate(0deg);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .gear-1 {
-            width: 200px;
-            height: 200px;
-          }
-          .gear-2 {
-            width: 150px;
-            height: 150px;
-          }
-          .gear-3 {
-            width: 100px;
-            height: 100px;
-          }
-        }
-      `}</style>
     </section>
   );
 };

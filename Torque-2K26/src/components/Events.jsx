@@ -32,6 +32,7 @@ const Events = () => {
       variants={cardVariants}
       className="industrial-card overflow-hidden cursor-pointer group flex flex-col h-full event-card"
       onClick={() => setSelectedEvent(event)}
+      style={{ position: 'relative' }}
     >
       {/* Event Image */}
       <div className="event-image relative flex-shrink-0">
@@ -40,20 +41,25 @@ const Events = () => {
           alt={event.name}
           className="w-full h-full object-cover transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gold/20 via-transparent to-transparent"></div>
+        {/* Gradient Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+        
+        {/* Event Title Overlay on Image */}
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="text-white font-bold text-lg md:text-xl group-hover:text-gold transition-colors">
+            {event.name}
+          </h3>
+        </div>
       </div>
 
       {/* Event Content */}
-      <div className="p-6 flex flex-col flex-grow event-border">
-        <h3 className="text-gold font-bold mb-3 group-hover:text-yellow-400 transition-colors" style={{ fontSize: '1.3rem' }}>
-          {event.name}
-        </h3>
-        <p className="text-text/60 text-sm mb-4 line-clamp-2 flex-grow">
+      <div className="p-4 md:p-6 flex flex-col flex-grow event-border">
+        <p className="text-text/60 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2 flex-grow">
           {event.tagline}
         </p>
 
         {/* View Details Button */}
-        <button className="neu-button w-full text-center mt-auto text-sm">
+        <button className="neu-button w-full text-center mt-auto text-xs md:text-sm py-2">
           View Details
         </button>
       </div>
@@ -66,8 +72,8 @@ const Events = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
-      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-      style={{ backdropFilter: 'blur(12px)' }}
+      className="fixed inset-0 bg-black/80 flex items-center justify-center p-4"
+      style={{ backdropFilter: 'blur(12px)', zIndex: 9999 }}
     >
       <motion.div
         initial={{ scale: 0.8, opacity: 0, y: 50 }}

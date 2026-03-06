@@ -101,8 +101,8 @@ const Starfield = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed inset-0 w-full h-full z-[-1]"
-            style={{ background: '#121212' }}
+            className="fixed inset-0 w-full h-full"
+            style={{ background: '#121212', zIndex: -1 }}
         />
     );
 };

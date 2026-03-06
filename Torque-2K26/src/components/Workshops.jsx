@@ -8,12 +8,13 @@ const Workshops = () => {
   const WorkshopCard = ({ workshop }) => (
     <div className="workshop-card flex-shrink-0 w-[350px] mx-4">
       <div
-        className="workshop-card-inner overflow-hidden relative group cursor-pointer rounded-2xl"
+        className="workshop-card-inner overflow-hidden relative group cursor-pointer rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-3 hover:shadow-2xl"
         style={{
           minHeight: '380px',
           backgroundImage: `url(${workshop.image})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
         }}
       >
         {/* Dark Overlay */}
@@ -116,7 +117,7 @@ const Workshops = () => {
         </motion.p>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes carousel {
           0% {
             transform: translateX(0);

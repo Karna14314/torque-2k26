@@ -820,22 +820,32 @@ a:focus {
 /* Section Backgrounds */
 #about {
   background: var(--bg);
+  position: relative;
+  z-index: 1;
 }
 
 #events {
   background: #111111;
+  position: relative;
+  z-index: 2;
 }
 
 #workshops {
   background: var(--bg);
+  position: relative;
+  z-index: 1;
 }
 
 #gallery {
   background: #111111;
+  position: relative;
+  z-index: 1;
 }
 
 #contact {
   background: var(--bg);
+  position: relative;
+  z-index: 1;
 }
 
 /* Event Card Specific Styles */
@@ -1044,6 +1054,10 @@ a:focus {
 
 .z-\[60\] {
   z-index: 60;
+}
+
+.z-\[-1\] {
+  z-index: -1;
 }
 
 .row-span-2 {
