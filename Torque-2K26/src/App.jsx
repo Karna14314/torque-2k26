@@ -4,7 +4,7 @@ import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
 import Events from './components/Events.jsx';
 import Workshops from './components/Workshops.jsx';
-// import Gallery from './components/Gallery.jsx'; // TEMPORARILY HIDDEN
+import Gallery from './components/Gallery.jsx';
 import Contact from './components/Contact.jsx';
 import Starfield from './components/Starfield.jsx';
 
@@ -12,7 +12,7 @@ const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Events', href: '#events' },
   { label: 'Workshops', href: '#workshops' },
-  // { label: 'Gallery', href: '#gallery' }, // TEMPORARILY HIDDEN
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' }
 ];
 
@@ -85,9 +85,10 @@ function App() {
               className="flex items-center cursor-pointer"
             >
               <img
-                src="/images/torque-logo.png"
-                alt="Torque Logo"
+                src="/torque.png"
+                alt="Torque 2K26 Logo"
                 className="h-10 md:h-12"
+                style={{ background: 'transparent' }}
               />
             </a>
 
@@ -156,9 +157,10 @@ function App() {
                 {/* Logo in Sidebar */}
                 <div className="flex items-center justify-between mb-8">
                   <img
-                    src="/images/torque-logo.png"
-                    alt="Torque Logo"
+                    src="/torque.png"
+                    alt="Torque 2K26 Logo"
                     className="h-10"
+                    style={{ background: 'transparent' }}
                   />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -224,9 +226,10 @@ function App() {
 
         <div className="section-divider" />
 
-        {/* Gallery Section - TEMPORARILY HIDDEN */}
-        {/* <Gallery /> */}
-        {/* <div className="section-divider" /> */}
+        {/* Gallery Section */}
+        <Gallery />
+
+        <div className="section-divider" />
 
         {/* Contact Section */}
         <Contact />

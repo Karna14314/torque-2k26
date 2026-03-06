@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { workshops } from '../data/data.js';
 
 const Workshops = () => {
-  const [isPaused, setIsPaused] = useState(false);
+  const [selectedWorkshop, setSelectedWorkshop] = useState(null);
 
   const WorkshopCard = ({ workshop }) => (
     <div className="workshop-card flex-shrink-0 w-[350px] mx-4">
@@ -39,13 +39,159 @@ const Workshops = () => {
             </div>
 
             {/* Know More Button - Bottom Right */}
-            <button className="workshop-outline-button flex-shrink-0">
+            <button 
+              className="workshop-outline-button flex-shrink-0"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedWorkshop(workshop);
+              }}
+            >
               Know More
             </button>
           </div>
         </div>
       </div>
     </div>
+  );
+
+  const WorkshopModal = ({ workshop, onClose }) => (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      onClick={onClose}
+      className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto"
+      style={{ padding: '2rem' }}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        onClick={(e) => e.stopPropagation()}
+        className="neu-card max-w-4xl w-full my-8 relative"
+        style={{
+          background: 'linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%)',
+          border: '2px solid rgba(212, 175, 55, 0.3)',
+          boxShadow: '0 0 40px rgba(212, 175, 55, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.5)',
+          maxHeight: '90vh',
+          overflowY: 'auto'
+        }}
+      >
+        {/* Close Button - More Prominent */}
+        <button
+          onClick={onClose}
+          className="sticky top-4 right-4 float-right text-gold hover:text-yellow-400 transition-colors z-20 neu-button p-3"
+          aria-label="Close modal"
+          style={{
+            background: 'rgba(212, 175, 55, 0.1)',
+            border: '2px solid rgba(212, 175, 55, 0.5)',
+            borderRadius: '50%'
+          }}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Workshop Image Header */}
+        <div 
+          className="h-64 bg-cover bg-center rounded-t-2xl relative"
+          style={{
+            backgroundImage: `url(${workshop.image})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent rounded-t-2xl"></div>
+          <div className="absolute bottom-6 left-6 right-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-5xl">{workshop.emoji}</span>
+              <div>
+                <h2 className="text-4xl font-bold text-gold">{workshop.name}</h2>
+                <p className="text-white/80 text-lg">{workshop.tagline}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Workshop Details */}
+        <div className="p-8">
+          {/* Info Pills */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="px-4 py-2 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm">
+              ⏱ {workshop.duration}
+            </div>
+            <div className="px-4 py-2 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm">
+              📊 {workshop.level}
+            </div>
+          </div>
+
+          {/* Description */}
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-gold mb-3">About This Workshop</h3>
+            <p className="text-text/80 leading-relaxed">{workshop.description}</p>
+          </div>
+
+          {/* Highlights */}
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-gold mb-3">What You'll Learn</h3>
+            <ul className="space-y-2">
+              {workshop.highlights.map((highlight, index) => (
+                <li key={index} className="flex items-start gap-3 text-text/80">
+                  <span className="text-gold mt-1">⚙</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Prerequisites */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-gold mb-3">Prerequisites</h3>
+            <p className="text-text/80">{workshop.prerequisites}</p>
+          </div>
+
+          {/* Register Button */}
+          <div className="flex justify-center gap-4">
+            {workshop.registrationLink ? (
+              <a
+                href={workshop.registrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neu-button inline-block"
+              >
+                Register Now
+              </a>
+            ) : (
+              <div className="text-center">
+                <div className="neu-button inline-block opacity-50 cursor-not-allowed">
+                  Registration Opening Soon
+                </div>
+                <p className="text-text/60 text-sm mt-2">Stay tuned for registration details</p>
+              </div>
+            )}
+            <button
+              onClick={onClose}
+              className="neu-button inline-block"
+              style={{
+                background: 'rgba(212, 175, 55, 0.1)',
+                border: '2px solid rgba(212, 175, 55, 0.3)'
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 
   return (
@@ -78,34 +224,20 @@ const Workshops = () => {
         >
           <div className="overflow-hidden py-8">
             <div
-              className="flex workshop-carousel"
+              className="flex justify-center gap-8 flex-wrap"
               style={{
-                width: 'fit-content'
+                width: '100%'
               }}
             >
               {/* Original Cards */}
               {workshops.map((workshop) => (
                 <WorkshopCard key={workshop.id} workshop={workshop} />
               ))}
-
-              {/* Cloned Cards for Seamless Loop */}
-              {workshops.map((workshop) => (
-                <WorkshopCard key={`clone-${workshop.id}`} workshop={workshop} />
-              ))}
-
-              {/* Additional Clone Set for Smoother Infinite Scroll */}
-              {workshops.map((workshop) => (
-                <WorkshopCard key={`clone2-${workshop.id}`} workshop={workshop} />
-              ))}
             </div>
           </div>
-
-          {/* Gradient Overlays for Edge Fade Effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 pointer-events-none z-10" style={{ background: 'linear-gradient(to right, var(--bg), transparent)' }}></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 pointer-events-none z-10" style={{ background: 'linear-gradient(to left, var(--bg), transparent)' }}></div>
         </motion.div>
 
-        {/* Hover Instruction */}
+        {/* Click Instruction */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -113,34 +245,19 @@ const Workshops = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-center text-text/60 text-sm mt-8"
         >
-          Hover over a card to pause and explore
+          Click "Know More" for workshop details
         </motion.p>
       </div>
 
-      <style>{`
-        @keyframes carousel {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-
-        .workshop-carousel {
-          animation: carousel 30s linear infinite;
-        }
-
-        .workshop-carousel:hover {
-          animation-play-state: paused;
-        }
-
-        @media (max-width: 768px) {
-          .workshop-card {
-            width: 300px;
-          }
-        }
-      `}</style>
+      {/* Workshop Modal */}
+      <AnimatePresence>
+        {selectedWorkshop && (
+          <WorkshopModal
+            workshop={selectedWorkshop}
+            onClose={() => setSelectedWorkshop(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };

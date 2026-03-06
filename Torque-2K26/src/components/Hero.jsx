@@ -141,13 +141,15 @@ const Hero = () => {
             style={{ zIndex: 1 }}
           >
             <img
-              src="/images/TORQUE.svg"
-              alt="Torque Logo"
+              src="/torque.png"
+              alt="Torque 2K26 Logo"
               className="mx-auto"
               style={{
                 width: '100%',
                 maxWidth: '600px',
                 height: 'auto',
+                background: 'transparent',
+                mixBlendMode: 'normal',
                 filter: 'drop-shadow(0 0 40px rgba(212,175,55,0.4))'
               }}
             />
@@ -211,7 +213,7 @@ const Hero = () => {
               <div style={{ position: 'absolute', bottom: '8px', right: '8px', width: '12px', height: '12px', borderRadius: '50%', background: 'radial-gradient(circle, #888 30%, #333 70%)', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)' }}></div>
 
               {/* Coming Soon Text */}
-              <div 
+              <div
                 className="relative px-12 md:px-20 py-6 md:py-8 text-2xl md:text-5xl font-bold tracking-widest text-center"
                 style={{
                   color: '#d4af37',

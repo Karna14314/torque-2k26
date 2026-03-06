@@ -12,9 +12,8 @@ export const festInfo = {
   email: 'torque2k25@gmail.com',
   brochureLink: 'https://drive.google.com/file/d/1Oq5hlPsLnExh-L0_W1Fa91KBd_wzN4R0/view?usp=drive_link',
   socialLinks: {
-    twitter: 'https://x.com/TORQUE_2K25?t=ILgS1XjD_ygM9mzeEA1mbQ&s=08',
-    instagram: 'https://www.instagram.com/torque_2k25?igsh=MTdmNjFkZ2l6c2c4aw==',
-    youtube: 'https://youtube.com/@torque_jntuk?si=nWCpxwGJb8z7qSG6'
+    instagram: 'https://www.instagram.com/torque_2k26?igsh=OTljbjU5bHluOWto',
+    youtube: 'https://youtube.com/@torque_2k26?si=ORxbhNqQoHCZqgKK'
   },
   location: {
     address: 'Department of Mechanical Engineering',
@@ -34,13 +33,25 @@ export const aboutText = [
 ];
 
 export const workshops = [
+  /*
   {
     id: 'ev',
     name: 'Electric Vehicles',
     emoji: '🚗',
     tagline: 'Drive the Future!',
     image: 'https://img.freepik.com/premium-photo/bicycle-with-bike-front-words-bike-bottom_1134658-2052.jpg?w=900',
-    link: 'subpages/workshop_ndt.html'
+    description: 'Dive into the world of electric mobility and sustainable transportation. Learn about EV technology, battery systems, charging infrastructure, and the future of automotive engineering.',
+    highlights: [
+      'Hands-on experience with EV components',
+      'Battery management systems',
+      'Motor control and power electronics',
+      'Charging infrastructure design',
+      'Industry expert sessions'
+    ],
+    duration: '2 Days',
+    level: 'Intermediate',
+    prerequisites: 'Basic knowledge of electrical systems',
+    registrationLink: null
   },
   {
     id: 'vr',
@@ -48,15 +59,38 @@ export const workshops = [
     emoji: '🥽',
     tagline: 'Immerse, Innovate, Inspire!',
     image: 'https://miro.medium.com/v2/resize:fit:831/0*pHaWxMAMhvjsBtKP.png',
-    link: 'subpages/workshop_vr.html'
+    description: 'Step into the immersive world of Virtual Reality. Explore VR development, 3D modeling, interactive simulations, and applications in engineering design and training.',
+    highlights: [
+      'VR hardware and software fundamentals',
+      '3D environment creation',
+      'Interactive simulation development',
+      'Engineering applications of VR',
+      'Hands-on VR project development'
+    ],
+    duration: '2 Days',
+    level: 'Beginner to Intermediate',
+    prerequisites: 'Basic programming knowledge helpful',
+    registrationLink: null
   },
+  */
   {
     id: 'robotics',
     name: 'Robotics',
     emoji: '🤖',
     tagline: 'Join the next Industrial Revolution!',
     image: 'https://www.tdk.com/en/tech-mag/sites/default/files/2024-08/robotics-in-manufactoring.jpg',
-    link: 'subpages/workshop_hbaja.html'
+    description: 'Master the fundamentals of robotics and automation. Learn robot kinematics, control systems, sensor integration, and programming for industrial and service robotics applications.',
+    highlights: [
+      'Robot design and kinematics',
+      'Sensor integration and control',
+      'Programming and automation',
+      'Industrial robotics applications',
+      'Build and program your own robot'
+    ],
+    duration: '3 Days',
+    level: 'Intermediate to Advanced',
+    prerequisites: 'Programming basics and mechanical fundamentals',
+    registrationLink: null
   }
 ];
 
@@ -142,14 +176,6 @@ export const events = [
     registrationLink: null
   },
   {
-    id: 'mechomania',
-    name: 'Mech-O-Mania',
-    tagline: 'Where Quick Thinking Meets Engineering Brilliance',
-    image: '/images/mania.jpg',
-    link: 'subpages/event_mania.html',
-    registrationLink: null
-  },
-  {
     id: 'cult',
     name: 'Rhythmic Fusion',
     tagline: 'A Spectacle of Dance and Energy!',
@@ -201,14 +227,15 @@ export const sponsors = [
 export const teamMembers = [
   // Faculty Coordinators
   { 
-    name: 'Dr.K. Meera Saheb', 
+    name: 'Dr.V. Vara Prasad', 
     role: 'Faculty Coordinator', 
     year: null,
     phone: null, 
     image: '/images/meera.jpeg',
     category: 'faculty'
   },
-  { 
+  
+  /*{ 
     name: 'Dr.V. Jaya Prasad', 
     role: 'Faculty Coordinator', 
     year: null,
@@ -216,34 +243,35 @@ export const teamMembers = [
     image: '/images/jp.jpeg',
     category: 'faculty'
   },
+  */
   
   // Student Coordinators - Year IV
   { 
-    name: 'N. Nithin', 
+    name: 'EM.Tharun', 
     role: 'Student Coordinator', 
     year: 'IV',
-    phone: '9347801102', 
+    phone: '9398322306', 
     image: '/images/nithin.png',
     category: 'student'
   },
   { 
-    name: 'S.V.N.S Surya', 
-    role: 'Technical Coordinator', 
+    name: 'M.Surya Vamsi', 
+    role: 'Student Coordinator', 
     year: 'IV',
-    phone: '9959591436', 
+    phone: '8328396974', 
     image: '/images/surya.png',
     category: 'student'
   },
   { 
-    name: 'B. Harish', 
+    name: 'E Mohith', 
     role: 'Student Coordinator', 
     year: 'IV',
-    phone: '8143506067', 
+    phone: '8317505860', 
     image: '/images/harish.jpeg',
     category: 'student'
   },
   { 
-    name: 'P. Lakshmi Trilokya', 
+    name: 'D.K.S Bhanu', 
     role: 'Student Coordinator', 
     year: 'IV',
     phone: null, 
@@ -251,7 +279,7 @@ export const teamMembers = [
     category: 'student'
   },
   { 
-    name: 'L. Padma Viharika', 
+    name: 'S.Anjum', 
     role: 'Student Coordinator', 
     year: 'IV',
     phone: null, 
@@ -259,23 +287,16 @@ export const teamMembers = [
     category: 'student'
   },
   { 
-    name: 'D. Sriram', 
+    name: 'T. Umesh', 
     role: 'Student Coordinator', 
     year: 'IV',
-    phone: '9701244959', 
+    phone: '9492266295', 
     image: '/images/ram.jpg',
     category: 'student'
   },
-  { 
-    name: 'K. Sai Nikhil', 
-    role: 'Student Coordinator', 
-    year: 'IV',
-    phone: '9346682351', 
-    image: '/images/nik.jpg',
-    category: 'student'
-  },
   
-  // Technical Coordinators - Year II & I
+  // Technical Coordinators - Year II & I - TEMPORARILY HIDDEN
+  /*
   { 
     name: 'V. Leela Krishna', 
     role: 'Technical Coordinator', 
@@ -292,6 +313,7 @@ export const teamMembers = [
     image: '/images/Ani.jpeg',
     category: 'technical'
   }
+  */
 ];
 
 export const galleryImages = [
