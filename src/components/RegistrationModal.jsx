@@ -3,8 +3,8 @@ import { festInfo } from '../data/data.js'
 
 const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
 
-  const [step, setStep] = useState(showOnsite ? 2 : 1)
-  const [type, setType] = useState(showOnsite ? 'onsite' : null)
+  const [step, setStep] = useState(2)
+  const [type, setType] = useState(showOnsite ? 'onsite' : 'external')
   const [form, setForm] = useState({
     name: '', phone: '', email: '',
     branch: '', rollNo: '',
@@ -273,7 +273,10 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
                 badgeColor: '#d4af37'
               }
             ]
-              .filter(opt => showOnsite || opt.key !== 'onsite')
+              .filter(opt => {
+                if (opt.key === 'onsite') return showOnsite;
+                return true;
+              })
               .map(opt => (
                 <div
                   key={opt.key}
@@ -320,12 +323,8 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
             <button
               style={S.backBtn}
               onClick={() => {
-                if (showOnsite) {
-                  onClose();
-                } else {
-                  setStep(1);
-                  setErrors({});
-                }
+                // Since Step 1 is temporarily hidden, Back button now closes the modal
+                onClose();
               }}
             >
               ← Back
@@ -649,7 +648,7 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
         )}
 
       </div>
-    </div>
+    </div >
   )
 }
 

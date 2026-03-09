@@ -701,7 +701,7 @@ export const sponsors = [
 
 export const teamMembers = [
   // Faculty Coordinators
-  {
+  /*{
     name: 'Dr.K. Meera Saheb',
     role: 'Faculty Coordinator',
     year: null,
@@ -709,14 +709,16 @@ export const teamMembers = [
     image: '/images/meera.jpeg',
     category: 'faculty'
   },
+  */
   {
-    name: 'Dr.V. Jaya Prasad',
+    name: 'Dr.V. Vara Prasad',
     role: 'Faculty Coordinator',
     year: null,
     phone: null,
-    image: '/images/jp.jpeg',
+    image: '/images/cordinators/drvvaraprased.jpeg',
     category: 'faculty'
   },
+  
 
 
   // Added from previous list
@@ -737,7 +739,7 @@ export const teamMembers = [
     category: 'student'
   },
   {
-    name: 'E Mohith',
+    name: 'E Mohit',
     role: 'Student Coordinator',
     year: 'IV',
     phone: '8317505860',

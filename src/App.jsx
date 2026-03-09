@@ -224,7 +224,7 @@ function App() {
 
   const handleRegister = (item, onsite = false) => {
     setRegistrationItem(item);
-    setIsOnsiteAdmin(onsite);
+    setIsOnsiteAdmin(onsite === true);
   };
 
   return (
@@ -247,7 +247,7 @@ function App() {
           {registrationItem && festInfo.registrationOpen && (
             <RegistrationModal
               item={registrationItem}
-              showOnsite={isOnsiteAdmin}
+              showOnsite={!!isOnsiteAdmin}
               onClose={() => {
                 setRegistrationItem(null);
                 setIsOnsiteAdmin(false);
