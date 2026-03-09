@@ -5,6 +5,9 @@ import Home from './pages/Home.jsx';
 import EventDetail from './pages/EventDetail.jsx';
 import WorkshopDetail from './pages/WorkshopDetail.jsx';
 import Starfield from './components/Starfield.jsx';
+import RegistrationModal from './components/RegistrationModal.jsx';
+import RegistrationClosed from './components/RegistrationClosed.jsx';
+import { festInfo } from './data/data.js';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -215,6 +218,8 @@ function Navigation() {
 }
 
 function App() {
+  const [registrationItem, setRegistrationItem] = useState(null);
+
   return (
     <Router>
       <div className="min-h-screen font-poppins relative">
@@ -227,10 +232,22 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home onRegister={(item) => setRegistrationItem(item)} />} />
             <Route path="/event/:id" element={<EventDetail />} />
             <Route path="/workshop/:id" element={<WorkshopDetail />} />
           </Routes>
+          {registrationItem && festInfo.registrationOpen && (
+            <RegistrationModal
+              item={registrationItem}
+              onClose={() => setRegistrationItem(null)}
+            />
+          )}
+          {registrationItem && !festInfo.registrationOpen && (
+            <RegistrationClosed
+              item={registrationItem}
+              onClose={() => setRegistrationItem(null)}
+            />
+          )}
         </motion.main>
       </div>
     </Router>
