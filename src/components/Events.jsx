@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { events } from '../data/data.js';
 import { useRef } from 'react';
 
-const Events = () => {
+const Events = ({ onRegister }) => {
   const navigate = useNavigate();
   const scrollContainerRef = useRef(null);
 
@@ -62,37 +62,53 @@ const Events = () => {
             </svg>
           </button>
 
-          <div 
-            className="events-carousel-container" 
+          <div
+            className="events-carousel-container"
             ref={scrollContainerRef}
           >
             <div className="events-carousel-track">
-            {/* Display events without duplication */}
-            {events.map((event, index) => (
-              <motion.div
-                key={event.id}
-                className="event-card-carousel"
-                onClick={() => navigate(`/event/${event.id}`)}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="event-card-image">
-                  <img
-                    src={event.image}
-                    alt={event.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="event-card-overlay"></div>
-                </div>
-                <div className="event-card-content">
-                  <h3 className="event-card-title">{event.name}</h3>
-                  <p className="event-card-tagline">{event.tagline}</p>
-                  <button className="event-card-button">
-                    Know More
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+              {/* Display events without duplication */}
+              {events.map((event, index) => (
+                <motion.div
+                  key={event.id}
+                  className="event-card-carousel"
+                  onClick={() => navigate(`/event/${event.id}`)}
+                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="event-card-image">
+                    <img
+                      src={event.image}
+                      alt={event.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="event-card-overlay"></div>
+                  </div>
+                  <div className="event-card-content">
+                    <h3 className="event-card-title">{event.name}</h3>
+                    <p className="event-card-tagline">{event.tagline}</p>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/event/${event.id}`);
+                      }}
+                      className="event-card-button"
+                    >
+                      View Details
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onRegister && onRegister(event);
+                      }}
+                      className="event-card-button"
+                      style={{ marginTop: '8px' }}
+                    >
+                      Register Now
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

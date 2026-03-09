@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { workshops } from '../data/data.js';
 
-const Workshops = () => {
+const Workshops = ({ onRegister }) => {
   const navigate = useNavigate();
 
   const containerVariants = {
@@ -41,7 +41,7 @@ const Workshops = () => {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-        
+
         {/* Emoji Badge */}
         <div className="absolute top-4 left-4 text-5xl">{workshop.emoji}</div>
       </div>
@@ -73,8 +73,25 @@ const Workshops = () => {
         </div>
 
         {/* Learn More Button */}
-        <button className="neu-button w-full text-center mt-auto">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/workshop/${workshop.id}`);
+          }}
+          className="neu-button w-full text-center mt-auto"
+        >
           Learn More
+        </button>
+
+        {/* Register Button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onRegister && onRegister(workshop);
+          }}
+          className="neu-button w-full text-center mt-2 bg-gold/10 text-gold border border-gold/30 hover:bg-gold/20"
+        >
+          Register
         </button>
       </div>
     </motion.div>

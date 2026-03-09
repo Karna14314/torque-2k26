@@ -76,7 +76,7 @@ const About = () => {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .marquee-container {
           width: 100%;
           overflow: hidden;

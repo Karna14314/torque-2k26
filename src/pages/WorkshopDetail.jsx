@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { workshops } from '../data/data.js';
 
-const WorkshopDetail = () => {
+const WorkshopDetail = ({ onRegister }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const workshop = workshops.find(w => w.id === id);
@@ -21,7 +21,7 @@ const WorkshopDetail = () => {
   }
 
   return (
-    <div className="min-h-screen py-20 px-4">
+    <div className="min-h-screen pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Workshop Image - Full Width */}
         <motion.div
@@ -204,23 +204,12 @@ const WorkshopDetail = () => {
           transition={{ delay: 1.0, duration: 0.6 }}
           className="text-center"
         >
-          {workshop.registrationLink ? (
-            <a
-              href={workshop.registrationLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="neu-button inline-block text-lg px-8 py-4"
-            >
-              Register Now
-            </a>
-          ) : (
-            <button
-              className="neu-button inline-block text-lg px-8 py-4 opacity-60 cursor-not-allowed"
-              disabled
-            >
-              Registration Opens Soon
-            </button>
-          )}
+          <button
+            onClick={() => onRegister && onRegister(workshop)}
+            className="neu-button inline-block text-lg px-8 py-4"
+          >
+            Register Now
+          </button>
         </motion.div>
       </div>
     </div>
