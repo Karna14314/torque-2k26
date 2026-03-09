@@ -5,6 +5,7 @@ import { galleryImages } from '../data/data.js';
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
   const openLightbox = (image, index) => {
     setSelectedImage(image);
@@ -103,7 +104,11 @@ const Gallery = () => {
         </motion.div>
 
         {/* Horizontal Scrolling Gallery */}
-        <div className="gallery-container">
+        <div 
+          className="gallery-container"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
           <div className="gallery-track">
             {galleryImages.map((image, index) => (
               <motion.figure

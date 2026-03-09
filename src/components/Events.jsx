@@ -62,12 +62,15 @@ const Events = () => {
             </svg>
           </button>
 
-          <div className="events-carousel-container" ref={scrollContainerRef}>
+          <div 
+            className="events-carousel-container" 
+            ref={scrollContainerRef}
+          >
             <div className="events-carousel-track">
-            {/* Duplicate events for seamless loop */}
-            {[...events, ...events].map((event, index) => (
+            {/* Display events without duplication */}
+            {events.map((event, index) => (
               <motion.div
-                key={`${event.id}-${index}`}
+                key={event.id}
                 className="event-card-carousel"
                 onClick={() => navigate(`/event/${event.id}`)}
                 whileHover={{ y: -10 }}

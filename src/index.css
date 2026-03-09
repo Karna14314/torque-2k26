@@ -915,7 +915,7 @@ section {
   width: 100%;
   position: relative;
   justify-content: flex-start;
-  padding: 20px 60px;
+  padding: 20px 80px 20px 80px;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--gold) var(--surface);
@@ -1270,6 +1270,20 @@ section {
 
 .person-phone:hover {
   color: #facc15;
+}
+
+/* Coordinator Image - Standardized Circle for all sections */
+.coordinator-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.1);
+  border: 2px solid var(--gold);
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
