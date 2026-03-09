@@ -9,7 +9,12 @@ export const festInfo = {
   department: 'Department of Mechanical Engineering',
   tagline: 'MARCH 26 & 27',
   festDate: '2026-03-26T09:00:00', // March 26, 2026
-  email: 'torque2k25@gmail.com',
+  registrationOpen: false,
+  registrationOpenDate: '2026-03-14',
+  appsScriptUrl: '',
+  upiId: 'torque2k26@upi',
+  upiName: 'Torque JNTUK',
+  email: 'torque2k26@gmail.com',
   brochureLink: 'https://drive.google.com/file/d/1Oq5hlPsLnExh-L0_W1Fa91KBd_wzN4R0/view?usp=drive_link',
   socialLinks: {
     instagram: 'https://www.instagram.com/torque_2k26?igsh=OTljbjU5bHluOWto',
@@ -50,6 +55,7 @@ export const workshops = [
     "duration": "3 Days",
     "level": "Intermediate to Advanced",
     "prerequisites": "Programming basics and mechanical fundamentals",
+    "prices": { "internal": 0, "external": 500, "onsite": 600 },
     "registrationLink": null,
     "sections": [
       {
@@ -143,6 +149,7 @@ export const events = [
     "tagline": "Where Strategy Meets Supremacy",
     "image": "/images/chess.jpeg",
     "link": "subpages/event_chessmonarch.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "\"Welcome to Chess Monarch: A Celebration of Intellectual Prowess, Strategic Brilliance, and Mind-Sport Excellence!\" Join us on a journey to unleash the power of chess and crown the ultimate champion. This event is the ultimate platform for chess enthusiasts to showcase their skills, strategies, and mental agility in a battle of wits that will leave only one victorious.",
     "sections": [
@@ -226,6 +233,7 @@ export const events = [
     "tagline": "Where Innovation Meets Inspiration",
     "image": "/images/expo.png",
     "link": "subpages/event_projectexpo.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "A Celebration of Creativity, Innovation, and Groundbreaking Ideas! Join us on a journey to unleash the power of imagination and innovation. This event is the ultimate platform for brilliant minds to showcase their cutting-edge projects, prototypes, presentations, inventions, and solutions that have the potential to transform the future.",
     "sections": [
@@ -254,6 +262,7 @@ export const events = [
     "tagline": "Where Engineering Meets Innovation",
     "image": "/images/bridge.jpg",
     "link": "subpages/event_bridge.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Are you ready to put your engineering skills to the test and build a structure that stands strong against the forces of nature? Bridge Battleground is an exciting challenge where participants must design and construct a sturdy bridge using limited materials while demonstrating their knowledge of structural mechanics and load distribution. This event combines creativity, technical expertise, and hands-on problem-solving.",
     "sections": [
@@ -282,6 +291,7 @@ export const events = [
     "tagline": "Where Precision Meets Craftsmanship",
     "image": "/images/lathe.jpg",
     "link": "subpages/event_lathemaster.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Think you’ve got what it takes to shape raw materials into finely crafted components? *Lathe Master* is an exciting machining competition where skill, accuracy, and creativity come together! This event challenges you to create precise mechanical parts using a lathe machine, demonstrating both your technical and creative abilities.",
     "sections": [
@@ -310,6 +320,7 @@ export const events = [
     "tagline": "A High-Speed Innovation Challenge",
     "image": "/images/race.jpg",
     "link": "subpages/event_roborace.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Robo Race is an electrifying technical event designed to challenge the speed, agility, and innovation of robotic designs.",
     "sections": [
@@ -343,6 +354,7 @@ export const events = [
     "tagline": "Where Ideas Take Shape in CAD",
     "image": "/images/design.jpg",
     "link": "subpages/event_designfreak.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Fancy being a design geek, a blend of precise engineering with a series of creative ideas? Design Freak is a revolutionary CAD modelling competition where innovation meets engineering excellence! This event challenges you to create an elaborate 3D model in standard CAD software like AutoCAD or CATIA.",
     "sections": [
@@ -375,6 +387,7 @@ export const events = [
     "tagline": "Where Ideas Take Flight",
     "image": "/images/slide.jpg",
     "link": "subpages/event_slideplain.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Do you have a game-changing idea that can revolutionize the world of mechanical engineering? Slide Plain is the ultimate idea presentation competition where creativity meets technical expertise! As a part of TORQUE, this event challenges participants to present their innovative concepts with clarity, precision, and impact.",
     "sections": [
@@ -403,6 +416,7 @@ export const events = [
     "tagline": "Where precision and speed meet the art of sand casting",
     "image": "/images/casting.jpg",
     "link": "subpages/event_castingcrowns.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Participants will demonstrate their proficiency in sand casting, a foundational foundry process in mechanical engineering. The goal is to create a flawless sand mold for a given design within the shortest time while adhering to standard practices. Competitors will be judged on speed, mold quality, and technical execution.",
     "sections": [
@@ -436,6 +450,7 @@ export const events = [
     "tagline": "Where Mechanics Meets Precision",
     "image": "/images/engine.jpg",
     "link": "subpages/event_enginemontage.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "\"Welcome to Engine Montage: A Celebration of Mechanical Skill, Precision, and Automotive Engineering!\" Join us on a journey to explore the intricacies of internal combustion engines and the art of their assembly. This event is the ultimate platform for aspiring mechanics and engineers to showcase their skills in assembling an automobile engine. Participants will gain practical experience and knowledge of engine components and their proper assembly, which is crucial for preventing engine failure.",
     "sections": [
@@ -464,6 +479,7 @@ export const events = [
     "tagline": "Where knowledge makes mechanical maestros",
     "image": "/images/quiz.jpg",
     "link": "subpages/event_quiz.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "Where knowledge makes mechanical maestros",
     "sections": [
@@ -497,6 +513,7 @@ export const events = [
     "tagline": "A Spectacle of Dance and Energy!",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlyyXe75bRDY0IT1bq_3tsVKwmx5hKml2xHw&s",
     "link": "subpages/cult.html",
+    "prices": { "internal": 0, "external": 150, "onsite": 200 },
     "registrationLink": null,
     "description": "A Spectacle of Dance and Energy!",
     "sections": [
