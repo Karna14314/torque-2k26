@@ -11,7 +11,7 @@ export const festInfo = {
   festDate: '2026-04-15T09:00:00',
   email: '2026.torque@gmail.com',
   brochureLink: '/images/poster2k26.jpeg',
-  registrationOpen: true,
+  registrationOpen: false,
   registrationOpenDate: '2026-03-14T09:00:00',
   appsScriptUrl: 'https://script.google.com/macros/s/AKfycbxldVM2j3Qr_5WZKfAZgaC-45Hdno9lMLS6v7Kry67KCIRQEQnrWnLquSCAv8yCtXJ4pg/exec',
   upiId: 'torque2k26@upi',
@@ -43,6 +43,7 @@ export const workshops = [
   {
     "id": "robotics",
     "name": "Robotics",
+    "category": "WORKSHOP",
     "emoji": "🤖",
     "tagline": "Join the next Industrial Revolution!",
     "image": "https://www.tdk.com/en/tech-mag/sites/default/files/2024-08/robotics-in-manufactoring.jpg",
@@ -155,6 +156,7 @@ export const events = [
   {
     "id": "chess",
     "name": "Chess Monarch",
+    "category": "EVENT",
     "tagline": "Where Strategy Meets Supremacy",
     "image": "/images/chess.jpeg",
     "link": "subpages/event_chessmonarch.html",
@@ -246,6 +248,7 @@ export const events = [
   {
     "id": "expo",
     "name": "Project Expo",
+    "category": "EVENT",
     "tagline": "Where Innovation Meets Inspiration",
     "image": "/images/expo.png",
     "link": "subpages/event_projectexpo.html",
@@ -282,6 +285,7 @@ export const events = [
   {
     "id": "bridge",
     "name": "Bridge Building",
+    "category": "EVENT",
     "tagline": "Where Engineering Meets Innovation",
     "image": "/images/bridge.jpg",
     "link": "subpages/event_bridge.html",
@@ -318,6 +322,7 @@ export const events = [
   {
     "id": "lathe",
     "name": "Lathe Master",
+    "category": "EVENT",
     "tagline": "Where Precision Meets Craftsmanship",
     "image": "/images/lathe.jpg",
     "link": "subpages/event_lathemaster.html",
@@ -354,6 +359,7 @@ export const events = [
   {
     "id": "roborace",
     "name": "Robo Race",
+    "category": "EVENT",
     "tagline": "A High-Speed Innovation Challenge",
     "image": "/images/race.jpg",
     "link": "subpages/event_roborace.html",
@@ -395,6 +401,7 @@ export const events = [
   {
     "id": "design",
     "name": "Design Freak",
+    "category": "EVENT",
     "tagline": "Where Ideas Take Shape in CAD",
     "image": "/images/design.jpg",
     "link": "subpages/event_designfreak.html",
@@ -435,6 +442,7 @@ export const events = [
   {
     "id": "slide",
     "name": "Slide Plain",
+    "category": "EVENT",
     "tagline": "Where Ideas Take Flight",
     "image": "/images/slide.jpg",
     "link": "subpages/event_slideplain.html",
@@ -471,6 +479,7 @@ export const events = [
   {
     "id": "casting",
     "name": "Casting Crown",
+    "category": "EVENT",
     "tagline": "Where precision and speed meet the art of sand casting",
     "image": "/images/casting.jpg",
     "link": "subpages/event_castingcrowns.html",
@@ -512,6 +521,7 @@ export const events = [
   {
     "id": "engine",
     "name": "Engine Montage",
+    "category": "EVENT",
     "tagline": "Where Mechanics Meets Precision",
     "image": "/images/engine.jpg",
     "link": "subpages/event_enginemontage.html",
@@ -548,6 +558,7 @@ export const events = [
   {
     "id": "quiz",
     "name": "Quiz",
+    "category": "EVENT",
     "tagline": "Where knowledge makes mechanical maestros",
     "image": "/images/quiz.jpg",
     "link": "subpages/event_quiz.html",
@@ -580,7 +591,7 @@ export const events = [
         "image": "/images/cordinators/hemanth.jpeg"
       },
       {
-        "name": "ChN Navya",
+        "name": "Ch Navya",
         "phone": null,
         "image": null
       }
@@ -589,6 +600,7 @@ export const events = [
   {
     "id": "cult",
     "name": "Rhythmic Fusion",
+    "category": "EVENT",
     "tagline": "A Spectacle of Dance and Energy!",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlyyXe75bRDY0IT1bq_3tsVKwmx5hKml2xHw&s",
     "link": "subpages/cult.html",

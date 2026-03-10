@@ -205,10 +205,11 @@ const WorkshopDetail = ({ onRegister }) => {
           className="text-center"
         >
           <button
-            onClick={() => onRegister && onRegister(workshop)}
             className="neu-button inline-block text-lg px-8 py-4"
+            style={{ opacity: 0.6, cursor: 'not-allowed' }}
+            disabled
           >
-            Register Now
+            Registration Opens Soon
           </button>
         </motion.div>
       </div>

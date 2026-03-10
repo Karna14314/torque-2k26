@@ -97,14 +97,11 @@ const Events = ({ onRegister }) => {
                       View Details
                     </button>
                     <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onRegister && onRegister(event);
-                      }}
                       className="event-card-button"
-                      style={{ marginTop: '8px' }}
+                      style={{ marginTop: '8px', opacity: 0.6, cursor: 'not-allowed' }}
+                      disabled
                     >
-                      Register Now
+                      Registration Opens Soon
                     </button>
                   </div>
                 </motion.div>

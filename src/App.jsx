@@ -141,13 +141,9 @@ function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden focus:outline-none"
+              className="md:hidden focus:outline-none flex flex-col items-center justify-center"
               aria-label="Toggle menu"
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
                 width: '40px',
                 height: '40px',
                 gap: isMobileMenuOpen ? '0px' : '5px',

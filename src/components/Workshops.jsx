@@ -85,13 +85,11 @@ const Workshops = ({ onRegister }) => {
 
         {/* Register Button */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onRegister && onRegister(workshop);
-          }}
-          className="neu-button w-full text-center mt-2 bg-gold/10 text-gold border border-gold/30 hover:bg-gold/20"
+          className="neu-button w-full text-center mt-2 bg-gold/10 text-gold border border-gold/30"
+          style={{ opacity: 0.6, cursor: 'not-allowed' }}
+          disabled
         >
-          Register
+          Registration Opens Soon
         </button>
       </div>
     </motion.div>
