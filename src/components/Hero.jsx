@@ -296,7 +296,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.6 }}
           >
-            <CountdownTimer targetDate="2026-03-26T09:00:00+05:30" />
+            <CountdownTimer targetDate="2026-03-26T00:00:00+05:30" />
           </motion.div>
         </motion.div>
       </div>
