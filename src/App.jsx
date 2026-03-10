@@ -141,24 +141,42 @@ function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-gold focus:outline-none"
+              className="md:hidden focus:outline-none"
               aria-label="Toggle menu"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '40px',
+                height: '40px',
+                gap: isMobileMenuOpen ? '0px' : '5px',
+                position: 'relative',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              <span style={{
+                display: 'block', width: '24px', height: '3px',
+                backgroundColor: '#d4af37', borderRadius: '2px',
+                transition: 'all 0.3s ease',
+                transform: isMobileMenuOpen ? 'rotate(45deg)' : 'none',
+                position: isMobileMenuOpen ? 'absolute' : 'relative',
+              }} />
+              <span style={{
+                display: 'block', width: '18px', height: '3px',
+                backgroundColor: '#d4af37', borderRadius: '2px',
+                transition: 'all 0.3s ease',
+                opacity: isMobileMenuOpen ? 0 : 1,
+              }} />
+              <span style={{
+                display: 'block', width: '24px', height: '3px',
+                backgroundColor: '#d4af37', borderRadius: '2px',
+                transition: 'all 0.3s ease',
+                transform: isMobileMenuOpen ? 'rotate(-45deg)' : 'none',
+                position: isMobileMenuOpen ? 'absolute' : 'relative',
+              }} />
             </button>
           </div>
         </div>

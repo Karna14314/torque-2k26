@@ -188,38 +188,18 @@ const Hero = () => {
             transition={{ delay: 1, duration: 0.6 }}
             className="mb-12 flex flex-col items-center gap-6"
           >
-            <div className="flex gap-5 items-center justify-center flex-wrap">
+            <div className="flex gap-2 md:gap-5 items-center justify-center">
               {/* 26 March */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
-                className="text-center"
-                style={{
-                  backgroundColor: '#f0f0f0',
-                  padding: '15px',
-                  borderRadius: '10px',
-                  minWidth: '120px'
-                }}
+                className="text-center bg-[#f0f0f0] p-2 md:p-[15px] rounded-[10px] min-w-[80px] md:min-w-[120px]"
               >
-                <div
-                  style={{
-                    width: '100px',
-                    height: '100px',
-                    backgroundColor: '#000000',
-                    color: 'white',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    fontSize: '60px',
-                    fontWeight: 'bold',
-                    borderRadius: '5px',
-                    margin: '0 auto 10px'
-                  }}
-                >
+                <div className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-black text-white flex justify-center items-center text-3xl md:text-[60px] font-bold rounded-[5px] mx-auto mb-1 md:mb-2">
                   26
                 </div>
-                <label style={{ fontSize: '16px', fontWeight: '600', color: '#333' }}>March</label>
+                <label className="text-xs md:text-base font-semibold text-[#333]">March</label>
               </motion.div>
 
               {/* & Symbol */}
@@ -227,32 +207,12 @@ const Hero = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
-                className="text-center"
-                style={{
-                  backgroundColor: '#f0f0f0',
-                  padding: '15px',
-                  borderRadius: '10px',
-                  minWidth: '120px'
-                }}
+                className="text-center bg-[#f0f0f0] p-2 md:p-[15px] rounded-[10px] min-w-[80px] md:min-w-[120px]"
               >
-                <div
-                  style={{
-                    width: '100px',
-                    height: '100px',
-                    backgroundColor: '#000000',
-                    color: 'white',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    fontSize: '60px',
-                    fontWeight: 'bold',
-                    borderRadius: '5px',
-                    margin: '0 auto 10px'
-                  }}
-                >
+                <div className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-black text-white flex justify-center items-center text-3xl md:text-[60px] font-bold rounded-[5px] mx-auto mb-1 md:mb-2">
                   &
                 </div>
-                <label style={{ fontSize: '16px', fontWeight: '600', color: 'transparent' }}>.</label>
+                <label className="text-xs md:text-base font-semibold text-transparent">.</label>
               </motion.div>
 
               {/* 27 March */}
@@ -260,32 +220,12 @@ const Hero = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1.6, duration: 0.5 }}
-                className="text-center"
-                style={{
-                  backgroundColor: '#f0f0f0',
-                  padding: '15px',
-                  borderRadius: '10px',
-                  minWidth: '120px'
-                }}
+                className="text-center bg-[#f0f0f0] p-2 md:p-[15px] rounded-[10px] min-w-[80px] md:min-w-[120px]"
               >
-                <div
-                  style={{
-                    width: '100px',
-                    height: '100px',
-                    backgroundColor: '#000000',
-                    color: 'white',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    fontSize: '60px',
-                    fontWeight: 'bold',
-                    borderRadius: '5px',
-                    margin: '0 auto 10px'
-                  }}
-                >
+                <div className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] bg-black text-white flex justify-center items-center text-3xl md:text-[60px] font-bold rounded-[5px] mx-auto mb-1 md:mb-2">
                   27
                 </div>
-                <label style={{ fontSize: '16px', fontWeight: '600', color: '#333' }}>March</label>
+                <label className="text-xs md:text-base font-semibold text-[#333]">March</label>
               </motion.div>
             </div>
           </motion.div>

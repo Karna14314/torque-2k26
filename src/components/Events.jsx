@@ -43,7 +43,7 @@ const Events = ({ onRegister }) => {
           {/* Left Arrow */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 neu-button w-12 h-12 flex items-center justify-center"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 neu-button w-12 h-12 items-center justify-center"
             aria-label="Scroll left"
           >
             <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,7 +54,7 @@ const Events = ({ onRegister }) => {
           {/* Right Arrow */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 neu-button w-12 h-12 flex items-center justify-center"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 neu-button w-12 h-12 items-center justify-center"
             aria-label="Scroll right"
           >
             <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">

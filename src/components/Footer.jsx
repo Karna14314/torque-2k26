@@ -17,7 +17,10 @@ const Footer = () => {
                     style={{ borderRadius: '16px', border: '1px solid rgba(212,175,55,0.1)' }}
                 >
                     {/* Left Half — Map */}
-                    <div className="relative w-full h-[250px] md:h-auto border-b md:border-b-0 md:border-r border-gold/10">
+                    <div
+                        className="relative w-full md:h-full border-b md:border-b-0 md:border-r border-gold/10"
+                        style={{ minHeight: '300px' }}
+                    >
                         <iframe
                             src={location.mapEmbedUrl}
                             className="absolute inset-0 w-full h-full border-none filter grayscale hover:grayscale-0 transition-all duration-700"
