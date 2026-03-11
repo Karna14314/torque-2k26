@@ -147,6 +147,18 @@ const WorkshopDetail = ({ onRegister }) => {
                   {section.content}
                 </p>
               )}
+              {section.type === 'list' && (
+                <ul className="space-y-3">
+                  {Array.isArray(section.content) ? section.content.map((item, i) => (
+                    <li key={i} className="text-text/80 text-lg leading-relaxed flex gap-3">
+                      <span className="text-gold mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  )) : (
+                    <li className="text-text/80 text-lg leading-relaxed">{section.content}</li>
+                  )}
+                </ul>
+              )}
             </motion.div>
           ))}
         </div>

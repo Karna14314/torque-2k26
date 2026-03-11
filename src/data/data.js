@@ -10,7 +10,7 @@ export const festInfo = {
   tagline: 'COMING SOON',
   festDate: '2026-04-15T09:00:00',
   email: '2026.torque@gmail.com',
-  brochureLink: '/images/poster2k26.webp',
+  brochureLink: '/images/poster2k26.jpeg',
   registrationOpen: false,
   registrationOpenDate: '2026-03-14T09:00:00',
   appsScriptUrl: 'https://script.google.com/macros/s/AKfycbxldVM2j3Qr_5WZKfAZgaC-45Hdno9lMLS6v7Kry67KCIRQEQnrWnLquSCAv8yCtXJ4pg/exec',
@@ -55,9 +55,6 @@ export const workshops = [
       "Industrial robotics applications",
       "Build and program your own robot"
     ],
-    "duration": "3 Days",
-    "level": "Intermediate to Advanced",
-    "prerequisites": "Programming basics and mechanical fundamentals",
     "registrationLink": null,
     "prices": {
       "internalME": 0,
@@ -69,9 +66,14 @@ export const workshops = [
     "upiQr": null,
     "sections": [
       {
-        "type": "text",
+        "type": "list",
         "title": "🔹 What You’ll Learn:",
-        "content": "✅ Basics of robotics & automation.\r\n            ✅ Hands-on experience with sensors & actuators\r\n            \r\n             ✅ Real-world applications & project-building\r\n             \r\n            Certificate of Participation::  Enhance your skills with official recognition."
+        "content": [
+          "✅ Basics of robotics & automation.",
+          "✅ Hands-on experience with sensors & actuators",
+          "✅ Real-world applications & project-building",
+          "Certificate of Participation:: Enhance your skills with official recognition."
+        ]
       }
     ],
     "coordinators": [
@@ -86,6 +88,99 @@ export const workshops = [
         "image": "/images/cordinators/Anjum.webp"
       }
 
+    ]
+  },
+  {
+    "id": "drones",
+    "name": "Drone Technologies",
+    "category": "WORKSHOP",
+    "emoji": "🛸",
+    "tagline": "Take Flight with Innovation!",
+    "image": "/images/drones.webp",
+    "description": "Master the fundamentals of drone technology and aerial systems. Learn about drone components, flight control systems, sensor integration, and applications of UAVs in industries such as agriculture, surveillance, mapping, and logistics.",
+    "highlights": [
+      "Drone design and basic aerodynamics",
+      "Flight controller and sensor integration",
+      "Drone programming and navigation basics",
+      "Industrial applications of drones",
+      "Hands-on experience with drone assembly and flight demonstration"
+    ],
+    "registrationLink": null,
+    "prices": {
+      "internalME": 0,
+      "internalOthers": 200,
+      "external": 500,
+      "onsite": 600
+    },
+    "upiId": null,
+    "upiQr": null,
+    "sections": [
+      {
+        "type": "list",
+        "title": "🔹 What You'll Learn:",
+        "content": [
+          "✅ Basics of drone technology & UAV systems",
+          "✅ Hands-on experience with drone components and flight control",
+          "✅ Real-world applications of drones in industry",
+          "Certificate of Participation: Practical learning experience with official recognition."
+        ]
+      }
+    ],
+    "coordinators": [
+      {
+        "name": "G Sai",
+        "phone": "7729939888",
+        "image": "/images/cordinators/Gsai.webp"
+      },
+      {
+        "name": "T.Ramyanagasree",
+        "phone": null,
+        "image": "/images/cordinators/Ramya.webp"
+      },
+    ]
+  },
+  {
+    "id": "cnc",
+    "name": "CNC Machines",
+    "category": "WORKSHOP",
+    "emoji": "⚙️",
+    "tagline": "Precision at Your Fingertips!",
+    "image": "/images/cncmachine.jpg",
+    "description": "Master the fundamentals of CNC machining and automated manufacturing. Learn about CNC machine components, G-code programming, tool operations, and precision manufacturing used in modern industries.",
+    "highlights": [
+      "Introduction to CNC machines and their components",
+      "Basics of G-code programming",
+      "Tool selection and machining operations",
+      "Industrial applications of CNC machining",
+      "Hands-on experience with CNC machine operation"
+    ],
+    "registrationLink": null,
+    "prices": {
+      "internalME": 0,
+      "internalOthers": 200,
+      "external": 500,
+      "onsite": 600
+    },
+    "upiId": null,
+    "upiQr": null,
+    "sections": [
+      {
+        "type": "list",
+        "title": "🔹 What You’ll Learn:",
+        "content": [
+          "✅ Basics of CNC machining and automated manufacturing",
+          "✅ Hands-on experience with CNC programming and machine setup",
+          "✅ Understanding precision machining and manufacturing processes",
+          "Certificate of Participation: Practical industry exposure."
+        ]
+      }
+    ],
+    "coordinators": [
+      {
+        "name": "Ganesh",
+        "phone": "+91 6304244070",
+        "image": "/images/cordinators/ganesh.webp"
+      },
     ]
   },
   /*
@@ -163,9 +258,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -201,7 +296,7 @@ export const events = [
           },
           {
             "label": "Entry Fee",
-            "value": "Rs 100/-"
+            "value": "Rs 250/-"
           }
         ]
       },
@@ -227,7 +322,7 @@ export const events = [
         "content": [
           "Create a Lichess account if you don't already have one.",
           "Register for the tournament by clicking on the \"Register Now\" button above or scanning the QR code on the official Torque poster.",
-          "Pay the entry fee of Rs 100/- through the provided payment methods.",
+          "Pay the entry fee of Rs 250/- through the provided payment methods.",
           "Make sure to be online and ready to play at the scheduled start time for each round."
         ]
       }
@@ -255,9 +350,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -292,9 +387,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -329,9 +424,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -366,9 +461,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -408,9 +503,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -449,9 +544,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -486,9 +581,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -528,9 +623,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -565,9 +660,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -607,9 +702,9 @@ export const events = [
     "registrationLink": null,
     "prices": {
       "internalME": 0,
-      "internalOthers": 100,
-      "external": 150,
-      "onsite": 200
+      "internalOthers": 250,
+      "external": 250,
+      "onsite": 250
     },
     "upiId": null,
     "upiQr": null,
@@ -722,6 +817,15 @@ export const teamMembers = [
     category: 'faculty'
   },
   */
+
+  {
+    name: 'Dr.k.Dileep Kumar',
+    role: 'Faculty Coordinator',
+    year: null,
+    phone: null,
+    image: '/images/cordinators/dileepkumar.jpeg',
+    category: 'faculty'
+  },
   {
     name: 'Dr.V. Vara Prasad',
     role: 'Faculty Coordinator',
@@ -730,7 +834,6 @@ export const teamMembers = [
     image: '/images/cordinators/drvvaraprased.webp',
     category: 'faculty'
   },
-
 
 
   // Added from previous list

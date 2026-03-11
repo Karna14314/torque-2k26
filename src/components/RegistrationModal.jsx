@@ -4,7 +4,7 @@ import { festInfo } from '../data/data.js'
 const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
 
   const [step, setStep] = useState(2)
-  const [type, setType] = useState(showOnsite ? 'onsite' : 'external')
+  const [type, setType] = useState('external')
   const [form, setForm] = useState({
     name: '', phone: '', email: '',
     branch: '', rollNo: '',
@@ -19,15 +19,7 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
 
   // ─── Price logic ───────────────────────────────────────
   const getPrice = () => {
-    if (!type) return null
-    if (type === 'internal') {
-      return form.branch === 'ME'
-        ? item.prices.internalME
-        : form.branch
-          ? item.prices.internalOthers
-          : null
-    }
-    return type === 'external' ? item.prices.external : item.prices.onsite
+    return item.prices.external
   }
 
   const price = getPrice()
@@ -47,16 +39,7 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
     if (!form.name.trim()) e.name = 'Required'
     if (!/^\d{10}$/.test(form.phone)) e.phone = 'Enter valid 10-digit number'
     if (!form.email.includes('@') || !form.email.includes('.')) e.email = 'Enter valid email'
-    if (type === 'internal') {
-      if (!form.rollNo.trim()) e.rollNo = 'Required'
-      if (!form.branch) e.branch = 'Select your branch'
-    }
-    if (type === 'external') {
-      if (!form.college.trim()) e.college = 'Required'
-    }
-    if (type === 'onsite') {
-      if (!form.paymentMethod) e.paymentMethod = 'Select payment method'
-    }
+    if (!form.college.trim()) e.college = 'Required'
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -94,16 +77,10 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
       email: form.email.trim(),
       rollNo: form.rollNo || '-',
       branch: form.branch || '-',
-      college: form.college || (type === 'internal' ? 'UCEK' : '-'),
+      college: form.college || '-',
       transactionId: form.transactionId || '-',
-      paymentMethod: type === 'internal' && finalPrice === 0 ? 'WAIVED'
-        : type === 'internal' ? 'UPI'
-          : type === 'external' ? 'UPI'
-            : form.paymentMethod,
-      paymentStatus: type === 'internal' && finalPrice === 0 ? 'WAIVED'
-        : type === 'internal' ? 'PENDING VERIFICATION'
-          : type === 'external' ? 'PENDING VERIFICATION'
-            : 'PENDING — COLLECT AT VENUE'
+      paymentMethod: 'UPI',
+      paymentStatus: 'PENDING VERIFICATION'
     }
 
     if (!festInfo.appsScriptUrl) {
@@ -186,76 +163,41 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
         {/* ── STEP 1 ── */}
         {step === 1 && (
           <div>
-            <h2 style={S.heading}>Who are you?</h2>
-            <p style={S.sub}>Select your registration type</p>
+            <h2 style={S.heading}>Ready to Register?</h2>
+            <p style={S.sub}>Proceed to fill out your details</p>
 
-            {[
-              {
-                key: 'internal',
-                icon: '🎓',
-                title: 'UCEK Student',
-                sub: 'Mechanical — Free · Other branches — ₹' + item.prices.internalOthers,
-                badge: 'ME FREE',
-                badgeColor: '#4caf50'
-              },
-              {
-                key: 'external',
-                icon: '🌐',
-                title: 'Outside College',
-                sub: 'Online registration + UPI payment',
-                badge: '₹' + item.prices.external,
-                badgeColor: '#d4af37'
-              },
-              {
-                key: 'onsite',
-                icon: '🚶',
-                title: 'On-Site Walk-in',
-                sub: 'Pay at venue on event day',
-                badge: '₹' + item.prices.onsite,
-                badgeColor: '#d4af37'
-              }
-            ]
-              .filter(opt => {
-                if (opt.key === 'onsite') return showOnsite;
-                return true;
-              })
-              .map(opt => (
-                <div
-                  key={opt.key}
-                  style={S.typeCard}
-                  onClick={() => { setType(opt.key); setStep(2) }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'
-                    e.currentTarget.style.transform = 'translateX(4px)'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'rgba(212,175,55,0.15)'
-                    e.currentTarget.style.transform = 'translateX(0)'
-                  }}
-                >
-                  <span style={{ fontSize: '1.8rem' }}>{opt.icon}</span>
-                  <div style={{ flexGrow: 1 }}>
-                    <div style={{ color: '#f0ede6', fontWeight: 600, fontSize: '0.95rem' }}>
-                      {opt.title}
-                    </div>
-                    <div style={{ color: 'rgba(240,237,230,0.5)', fontSize: '0.78rem', marginTop: '2px' }}>
-                      {opt.sub}
-                    </div>
-                  </div>
-                  <span style={{
-                    background: opt.badgeColor === '#4caf50'
-                      ? 'rgba(76,175,80,0.12)' : 'rgba(212,175,55,0.1)',
-                    border: `1px solid ${opt.badgeColor === '#4caf50'
-                      ? 'rgba(76,175,80,0.3)' : 'rgba(212,175,55,0.3)'}`,
-                    color: opt.badgeColor,
-                    borderRadius: '20px', padding: '3px 10px',
-                    fontSize: '0.78rem', fontWeight: 700,
-                    whiteSpace: 'nowrap'
-                  }}>
-                    {opt.badge}
-                  </span>
+            <div
+              style={S.typeCard}
+              onClick={() => { setType('external'); setStep(2) }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'
+                e.currentTarget.style.transform = 'translateX(4px)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.15)'
+                e.currentTarget.style.transform = 'translateX(0)'
+              }}
+            >
+              <span style={{ fontSize: '1.8rem' }}>🎟️</span>
+              <div style={{ flexGrow: 1 }}>
+                <div style={{ color: '#f0ede6', fontWeight: 600, fontSize: '0.95rem' }}>
+                  Standard Registration
                 </div>
-              ))}
+                <div style={{ color: 'rgba(240,237,230,0.5)', fontSize: '0.78rem', marginTop: '2px' }}>
+                  Online registration + UPI payment
+                </div>
+              </div>
+              <span style={{
+                background: 'rgba(212,175,55,0.1)',
+                border: '1px solid rgba(212,175,55,0.3)',
+                color: '#d4af37',
+                borderRadius: '20px', padding: '3px 10px',
+                fontSize: '0.78rem', fontWeight: 700,
+                whiteSpace: 'nowrap'
+              }}>
+                ₹{item.prices.external}
+              </span>
+            </div>
           </div>
         )}
 
@@ -314,117 +256,17 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
               </p>
             </div>
 
-            {/* Internal extras */}
-            {type === 'internal' && (
-              <>
-                <div style={fieldWrap}>
-                  <label style={labelStyle}>Roll Number *</label>
-                  <input
-                    style={inputStyle('rollNo')}
-                    value={form.rollNo}
-                    onChange={e => update('rollNo', e.target.value)}
-                    placeholder="22N81A0XXX"
-                  />
-                  {errors.rollNo && <p style={errorStyle}>{errors.rollNo}</p>}
-                </div>
-
-                <div style={fieldWrap}>
-                  <label style={labelStyle}>Branch *</label>
-                  <select
-                    style={{ ...inputStyle('branch'), appearance: 'none' }}
-                    value={form.branch}
-                    onChange={e => update('branch', e.target.value)}
-                  >
-                    <option value="">Select Branch</option>
-                    {['ME', 'CE', 'EEE', 'ECE', 'CSE', 'IT', 'Other'].map(b => (
-                      <option key={b} value={b}>{b}</option>
-                    ))}
-                  </select>
-                  {errors.branch && <p style={errorStyle}>{errors.branch}</p>}
-                </div>
-
-                {/* Price preview after branch selected */}
-                {form.branch && (
-                  <div style={{
-                    background: isFree ? 'rgba(76,175,80,0.08)' : 'rgba(212,175,55,0.06)',
-                    border: `1px solid ${isFree ? 'rgba(76,175,80,0.25)' : 'rgba(212,175,55,0.2)'}`,
-                    borderRadius: '10px', padding: '10px 14px',
-                    marginBottom: '14px',
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-                  }}>
-                    <span style={{ color: 'rgba(240,237,230,0.6)', fontSize: '0.85rem' }}>
-                      Registration Fee
-                    </span>
-                    <span style={{
-                      color: isFree ? '#4caf50' : '#d4af37',
-                      fontWeight: 700, fontSize: '1rem'
-                    }}>
-                      {isFree ? 'FREE' : '₹' + price}
-                      <span style={{ color: 'rgba(240,237,230,0.4)', fontSize: '0.72rem', fontWeight: 400, marginLeft: '6px' }}>
-                        ({form.branch === 'ME' ? 'Mechanical — no fee' : 'other branch fee'})
-                      </span>
-                    </span>
-                  </div>
-                )}
-              </>
-            )}
-
-            {/* External extras */}
-            {type === 'external' && (
-              <div style={fieldWrap}>
-                <label style={labelStyle}>College Name *</label>
-                <input
-                  style={inputStyle('college')}
-                  value={form.college}
-                  onChange={e => update('college', e.target.value)}
-                  placeholder="Your college name"
-                />
-                {errors.college && <p style={errorStyle}>{errors.college}</p>}
-              </div>
-            )}
-
-            {/* Onsite extras */}
-            {type === 'onsite' && (
-              <>
-                <div style={fieldWrap}>
-                  <label style={labelStyle}>College (Optional)</label>
-                  <input
-                    style={inputStyle('college')}
-                    value={form.college}
-                    onChange={e => update('college', e.target.value)}
-                    placeholder="Leave blank if UCEK"
-                  />
-                </div>
-
-                <div style={fieldWrap}>
-                  <label style={labelStyle}>Payment Method at Venue *</label>
-                  <div style={{ display: 'flex', gap: '10px', marginTop: '4px' }}>
-                    {['CASH', 'UPI'].map(method => (
-                      <button
-                        key={method}
-                        type="button"
-                        style={{
-                          flex: 1, padding: '11px',
-                          borderRadius: '10px', cursor: 'pointer',
-                          fontFamily: 'Poppins', fontWeight: 600,
-                          fontSize: '0.9rem', transition: 'all 0.2s',
-                          background: form.paymentMethod === method
-                            ? '#d4af37' : '#111',
-                          color: form.paymentMethod === method
-                            ? '#0d0d0d' : '#d4af37',
-                          border: `1px solid ${form.paymentMethod === method
-                            ? '#d4af37' : 'rgba(212,175,55,0.25)'}`
-                        }}
-                        onClick={() => update('paymentMethod', method)}
-                      >
-                        {method === 'CASH' ? '💵 Cash' : '📱 UPI'}
-                      </button>
-                    ))}
-                  </div>
-                  {errors.paymentMethod && <p style={errorStyle}>{errors.paymentMethod}</p>}
-                </div>
-              </>
-            )}
+            {/* College Name */}
+            <div style={fieldWrap}>
+              <label style={labelStyle}>College Name *</label>
+              <input
+                style={inputStyle('college')}
+                value={form.college}
+                onChange={e => update('college', e.target.value)}
+                placeholder="Your college name"
+              />
+              {errors.college && <p style={errorStyle}>{errors.college}</p>}
+            </div>
 
             {submitError && <p style={{ color: '#ff6b6b', fontSize: '0.82rem', marginBottom: '10px' }}>{submitError}</p>}
 
@@ -436,12 +278,11 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
               }}
               onClick={() => {
                 if (!validate()) return
-                if (type === 'external' || (type === 'internal' && price > 0)) { setStep(3); return }
-                handleSubmit()
+                setStep(3)
               }}
               disabled={loading}
             >
-              {loading ? 'Submitting...' : (type === 'external' || (type === 'internal' && price > 0)) ? 'Next — Payment →' : 'Submit Registration'}
+              {loading ? 'Submitting...' : 'Next — Payment →'}
             </button>
           </div>
         )}
@@ -548,14 +389,7 @@ const RegistrationModal = ({ item, onClose, showOnsite = false }) => {
               textAlign: 'left'
             }}>
               <p style={{ color: '#f0ede6', fontSize: '0.85rem', lineHeight: 1.6 }}>
-                {type === 'internal' && price === 0 &&
-                  '✅ You\'re all set! Carry your college ID on the event day.'}
-                {type === 'internal' && price > 0 &&
-                  '⏳ Your payment is pending verification. A coordinator will confirm via phone.'}
-                {type === 'external' &&
-                  '⏳ Payment pending verification. Keep your Transaction ID handy.'}
-                {type === 'onsite' &&
-                  `📍 Visit the registration desk and pay ₹${price} via ${form.paymentMethod} on the event day.`}
+                ⏳ Payment pending verification. Keep your Transaction ID handy.
               </p>
             </div>
 
