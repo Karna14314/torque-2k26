@@ -10,7 +10,7 @@ export const festInfo = {
   tagline: 'COMING SOON',
   festDate: '2026-04-15T09:00:00',
   email: '2026.torque@gmail.com',
-  brochureLink: '/images/poster2k26.jpeg',
+  brochureLink: '/images/poster2k26.webp',
   registrationOpen: false,
   registrationOpenDate: '2026-03-14T09:00:00',
   appsScriptUrl: 'https://script.google.com/macros/s/AKfycbxldVM2j3Qr_5WZKfAZgaC-45Hdno9lMLS6v7Kry67KCIRQEQnrWnLquSCAv8yCtXJ4pg/exec',
@@ -78,12 +78,12 @@ export const workshops = [
       {
         "name": "T Umesh",
         "phone": "+91 9492266295",
-        "image": "/images/cordinators/Umesh.jpeg"
+        "image": "/images/cordinators/Umesh.webp"
       },
       {
         "name": "S Anjum",
         "phone": null,
-        "image": "/images/cordinators/Anjum.jpeg"
+        "image": "/images/cordinators/Anjum.webp"
       }
 
     ]
@@ -145,7 +145,7 @@ export const workshops = [
       {
         "name": "V. Ramya Suchitha",
         "phone": null,
-        "image": "/images/nik.jpg"
+        "image": "/images/nik.webp"
       }
     ]
   }
@@ -158,7 +158,7 @@ export const events = [
     "name": "Chess Monarch",
     "category": "EVENT",
     "tagline": "Where Strategy Meets Supremacy",
-    "image": "/images/chess.jpeg",
+    "image": "/images/chess.webp",
     "link": "subpages/event_chessmonarch.html",
     "registrationLink": null,
     "prices": {
@@ -236,12 +236,12 @@ export const events = [
       {
         "name": "G Veera Babu",
         "phone": "+91 8790931082",
-        "image": "/images/cordinators/veera.jpeg"
+        "image": "/images/cordinators/veera.webp"
       },
       {
         "name": "S Jyoshna",
         "phone": null,
-        "image": "/images/cordinators/joshna.jpeg"
+        "image": "/images/cordinators/joshna.webp"
       }
     ]
   },
@@ -250,7 +250,7 @@ export const events = [
     "name": "Project Expo",
     "category": "EVENT",
     "tagline": "Where Innovation Meets Inspiration",
-    "image": "/images/expo.png",
+    "image": "/images/expo.webp",
     "link": "subpages/event_projectexpo.html",
     "registrationLink": null,
     "prices": {
@@ -273,12 +273,12 @@ export const events = [
       {
         "name": "A Vijay Sekhar",
         "phone": "+91 9010826943",
-        "image": "/images/cordinators/vijay.jpeg"
+        "image": "/images/cordinators/vijay.webp"
       },
       {
         "name": "M Keerthi",
         "phone": null,
-        "image": "/images/cordinators/keerthi.jpeg"
+        "image": "/images/cordinators/keerthi.webp"
       }
     ]
   },
@@ -287,7 +287,7 @@ export const events = [
     "name": "Bridge Building",
     "category": "EVENT",
     "tagline": "Where Engineering Meets Innovation",
-    "image": "/images/bridge.jpg",
+    "image": "/images/bridge.webp",
     "link": "subpages/event_bridge.html",
     "registrationLink": null,
     "prices": {
@@ -315,7 +315,7 @@ export const events = [
       {
         "name": "E Mohit",
         "phone": "+91 8317505860",
-        "image": "/images/cordinators/Mohith.jpeg"
+        "image": "/images/cordinators/Mohith.webp"
       }
     ]
   },
@@ -324,7 +324,7 @@ export const events = [
     "name": "Lathe Master",
     "category": "EVENT",
     "tagline": "Where Precision Meets Craftsmanship",
-    "image": "/images/lathe.jpg",
+    "image": "/images/lathe.webp",
     "link": "subpages/event_lathemaster.html",
     "registrationLink": null,
     "prices": {
@@ -347,12 +347,12 @@ export const events = [
       {
         "name": "B Raja",
         "phone": "9010882295",
-        "image": "/images/cordinators/Raja.jpeg"
+        "image": "/images/cordinators/Raja.webp"
       },
       {
         "name": "D Soujanya",
         "phone": null,
-        "image": "/images/cordinators/Soujanya.jpeg"
+        "image": "/images/cordinators/Soujanya.webp"
       }
     ]
   },
@@ -361,7 +361,7 @@ export const events = [
     "name": "Robo Race",
     "category": "EVENT",
     "tagline": "A High-Speed Innovation Challenge",
-    "image": "/images/race.jpg",
+    "image": "/images/race.webp",
     "link": "subpages/event_roborace.html",
     "registrationLink": null,
     "prices": {
@@ -389,12 +389,12 @@ export const events = [
       {
         "name": "V lalith nandan",
         "phone": "+91 6301774273",
-        "image": "/images/cordinators/Lalith.jpeg"
+        "image": "/images/cordinators/Lalith.webp"
       },
       {
         "name": "D K S Bhanu",
         "phone": null,
-        "image": "/images/cordinators/Bhanu.jpeg"
+        "image": "/images/cordinators/Bhanu.webp"
       }
     ]
   },
@@ -403,7 +403,7 @@ export const events = [
     "name": "Design Freak",
     "category": "EVENT",
     "tagline": "Where Ideas Take Shape in CAD",
-    "image": "/images/design.jpg",
+    "image": "/images/design.webp",
     "link": "subpages/event_designfreak.html",
     "registrationLink": null,
     "prices": {
@@ -431,11 +431,11 @@ export const events = [
       {
         "name": "P Satya Prakash ",
         "phone": "+91 9347814093",
-        "image": "/images/cordinators/prakash.jpeg"
+        "image": "/images/cordinators/prakash.webp"
       }, {
         "name": "M venkata Lakshmi ",
         "phone": null,
-        "image": "/images/cordinators/Lakshmi.jpeg"
+        "image": "/images/cordinators/Lakshmi.webp"
       }
     ]
   },
@@ -444,7 +444,7 @@ export const events = [
     "name": "Slide Plain",
     "category": "EVENT",
     "tagline": "Where Ideas Take Flight",
-    "image": "/images/slide.jpg",
+    "image": "/images/slide.webp",
     "link": "subpages/event_slideplain.html",
     "registrationLink": null,
     "prices": {
@@ -467,12 +467,12 @@ export const events = [
       {
         "name": "R Raj Kumar",
         "phone": "+91 9347161542",
-        "image": "/images/cordinators/rajkumar.jpeg"
+        "image": "/images/cordinators/rajkumar.webp"
       },
       {
         "name": "R kavya",
         "phone": null,
-        "image": "/images/cordinators/Kavya.jpeg"
+        "image": "/images/cordinators/Kavya.webp"
       }
     ]
   },
@@ -481,7 +481,7 @@ export const events = [
     "name": "Casting Crown",
     "category": "EVENT",
     "tagline": "Where precision and speed meet the art of sand casting",
-    "image": "/images/casting.jpg",
+    "image": "/images/casting.webp",
     "link": "subpages/event_castingcrowns.html",
     "registrationLink": null,
     "prices": {
@@ -509,12 +509,12 @@ export const events = [
       {
         "name": "Y Vishal",
         "phone": "+91 7075589309",
-        "image": "/images/cordinators/vishal.jpeg"
+        "image": "/images/cordinators/vishal.webp"
       },
       {
         "name": "K Haritha",
         "phone": null,
-        "image": "/images/cordinators/Haritha.jpeg"
+        "image": "/images/cordinators/Haritha.webp"
       }
     ]
   },
@@ -523,7 +523,7 @@ export const events = [
     "name": "Engine Montage",
     "category": "EVENT",
     "tagline": "Where Mechanics Meets Precision",
-    "image": "/images/engine.jpg",
+    "image": "/images/engine.webp",
     "link": "subpages/event_enginemontage.html",
     "registrationLink": null,
     "prices": {
@@ -546,12 +546,12 @@ export const events = [
       {
         "name": "B Sai",
         "phone": "+91 9441725173",
-        "image": "/images/cordinators/Bsai.jpeg"
+        "image": "/images/cordinators/Bsai.webp"
       },
       {
         "name": "M Harshitha",
         "phone": null,
-        "image": "/images/cordinators/Harshita.jpeg"
+        "image": "/images/cordinators/Harshita.webp"
       }
     ]
   },
@@ -560,7 +560,7 @@ export const events = [
     "name": "Quiz",
     "category": "EVENT",
     "tagline": "Where knowledge makes mechanical maestros",
-    "image": "/images/quiz.jpg",
+    "image": "/images/quiz.webp",
     "link": "subpages/event_quiz.html",
     "registrationLink": null,
     "prices": {
@@ -588,7 +588,7 @@ export const events = [
       {
         "name": "M Hemanth",
         "phone": "+91 6302823412",
-        "image": "/images/cordinators/hemanth.jpeg"
+        "image": "/images/cordinators/hemanth.webp"
       },
       {
         "name": "Ch Navya",
@@ -635,7 +635,7 @@ export const events = [
       {
         "name": "B Chandu",
         "phone": null,
-        "image": "/images/cordinators/chandu.jpeg"
+        "image": "/images/cordinators/chandu.webp"
       },
 
     ]
@@ -645,7 +645,7 @@ export const events = [
     "id": "mania",
     "name": "Mech-O-Mania",
     "tagline": "Where Quick Thinking Meets Engineering Brilliance",
-    "image": "/images/lathe.jpg",
+    "image": "/images/lathe.webp",
     "link": "subpages/event_mania.html",
     "registrationLink": null,
     "description": "Where Quick Thinking Meets Engineering Brilliance",
@@ -665,7 +665,7 @@ export const events = [
       {
         "name": "K. Madhan Kumar",
         "phone": "+91 9392595704",
-        "image": "/images/nik.jpg"
+        "image": "/images/nik.webp"
       }
     ]
   }
@@ -718,7 +718,7 @@ export const teamMembers = [
     role: 'Faculty Coordinator',
     year: null,
     phone: null,
-    image: '/images/meera.jpeg',
+    image: '/images/meera.webp',
     category: 'faculty'
   },
   */
@@ -727,7 +727,7 @@ export const teamMembers = [
     role: 'Faculty Coordinator',
     year: null,
     phone: null,
-    image: '/images/cordinators/drvvaraprased.jpeg',
+    image: '/images/cordinators/drvvaraprased.webp',
     category: 'faculty'
   },
 
@@ -739,7 +739,7 @@ export const teamMembers = [
     role: 'Student Coordinator',
     year: 'IV',
     phone: '9398322306',
-    image: '/images/cordinators/tharun.jpeg',
+    image: '/images/cordinators/tharun.webp',
     category: 'student'
   },
   {
@@ -747,7 +747,7 @@ export const teamMembers = [
     role: 'Student Coordinator',
     year: 'IV',
     phone: '8328396974',
-    image: '/images/cordinators/surya1.jpeg',
+    image: '/images/cordinators/surya1.webp',
     category: 'student'
   },
   {
@@ -755,7 +755,7 @@ export const teamMembers = [
     role: 'Student Coordinator',
     year: 'IV',
     phone: '8317505860',
-    image: '/images/cordinators/Mohith.jpeg',
+    image: '/images/cordinators/Mohith.webp',
     category: 'student'
   },
   {
@@ -763,7 +763,7 @@ export const teamMembers = [
     role: 'Student Coordinator',
     year: 'IV',
     phone: null,
-    image: '/images/cordinators/Bhanu.jpeg',
+    image: '/images/cordinators/Bhanu.webp',
     category: 'student'
   },
   {
@@ -771,7 +771,7 @@ export const teamMembers = [
     role: 'Student Coordinator',
     year: 'IV',
     phone: null,
-    image: '/images/cordinators/Anjum.jpeg',
+    image: '/images/cordinators/Anjum.webp',
     category: 'student'
   },
   {
@@ -779,23 +779,23 @@ export const teamMembers = [
     role: 'Student Coordinator',
     year: 'IV',
     phone: '9492266295',
-    image: '/images/cordinators/Umesh.jpeg',
+    image: '/images/cordinators/Umesh.webp',
     category: 'student'
   },
 ];
 
 export const galleryImages = [
-  '/images/t1.jpg',
-  '/images/te.jpg',
-  '/images/gallery/g4.jpeg',
-  '/images/gallery/g3.jpeg',
-  '/images/gallery/g5.jpeg',
-  '/images/gallery/g6.jpeg',
-  '/images/gallery/g7.jpeg',
-  '/images/gallery/g8.jpeg',
-  '/images/gallery/g9.jpeg',
-  '/images/gallery/g10.jpeg',
-  '/images/gallery/g11.jpeg',
+  '/images/t1.webp',
+  '/images/te.webp',
+  '/images/gallery/g4.webp',
+  '/images/gallery/g3.webp',
+  '/images/gallery/g5.webp',
+  '/images/gallery/g6.webp',
+  '/images/gallery/g7.webp',
+  '/images/gallery/g8.webp',
+  '/images/gallery/g9.webp',
+  '/images/gallery/g10.webp',
+  '/images/gallery/g11.webp',
 
 ];
 

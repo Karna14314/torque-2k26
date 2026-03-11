@@ -154,7 +154,7 @@ const Hero = () => {
             style={{ zIndex: 1 }}
           >
             <img
-              src="/torque.png"
+              src="/torque.webp"
               alt="Torque 2K26 Logo"
               className="mx-auto"
               style={{

@@ -103,7 +103,7 @@ function Navigation() {
                 className="flex items-center cursor-pointer"
               >
                 <img
-                  src="/torque.png"
+                  src="/torque.webp"
                   alt="Torque 2K26 Logo"
                   className="h-10 md:h-12"
                   style={{ background: 'transparent' }}
@@ -203,7 +203,7 @@ function Navigation() {
                 {/* Logo in Sidebar */}
                 <div className="flex items-center justify-between mb-8">
                   <img
-                    src="/torque.png"
+                    src="/torque.webp"
                     alt="Torque 2K26 Logo"
                     className="h-10"
                     style={{ background: 'transparent' }}
