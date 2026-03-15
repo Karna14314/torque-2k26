@@ -13,7 +13,7 @@ export const festInfo = {
   brochureLink: '/images/poster2k26.jpeg',
   registrationOpen: true,
   registrationOpenDate: '2026-03-14T09:00:00',
-  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbxldVM2j3Qr_5WZKfAZgaC-45Hdno9lMLS6v7Kry67KCIRQEQnrWnLquSCAv8yCtXJ4pg/exec',
+  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbwMu9Zs28Rh6lQZHzfMU47WyNABRU-SPciplthIQBh2xuIoSy9__ZMTR3KEISTFU27ARg/exec',
   upiId: 'torque26@sbi',
   upiName: 'Torque 2K26',
   upiQr: '/images/paymentupi/Torqueupicropped.jpeg',
