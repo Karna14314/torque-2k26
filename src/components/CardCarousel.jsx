@@ -156,8 +156,22 @@ const CardCarousel = ({ items, type, autoScrollSpeed = 6000 }) => {
     e.preventDefault();
     velocity.current = e.pageX - lastX.current;
     lastX.current = e.pageX;
-    trackRef.current.scrollLeft = dragScrollLeft.current - (e.pageX - dragStartX.current);
-    wrapScroll();
+    
+    const track = trackRef.current;
+    const sw = setWidthRef.current;
+    const moveX = e.pageX - dragStartX.current;
+    let newScrollLeft = dragScrollLeft.current - moveX;
+
+    // Smooth infinite wrapping during drag
+    if (newScrollLeft >= sw * 2) {
+      newScrollLeft -= sw;
+      dragScrollLeft.current -= sw;
+    } else if (newScrollLeft <= 0) {
+      newScrollLeft += sw;
+      dragScrollLeft.current += sw;
+    }
+
+    track.scrollLeft = newScrollLeft;
   };
 
   const onMouseUp = () => {
@@ -197,10 +211,25 @@ const CardCarousel = ({ items, type, autoScrollSpeed = 6000 }) => {
 
   const onTouchMove = (e) => {
     if (!isDragging.current) return;
-    velocity.current = e.touches[0].clientX - lastX.current;
-    lastX.current = e.touches[0].clientX;
-    trackRef.current.scrollLeft = dragScrollLeft.current - (e.touches[0].clientX - dragStartX.current);
-    wrapScroll();
+    const currentX = e.touches[0].clientX;
+    velocity.current = currentX - lastX.current;
+    lastX.current = currentX;
+    
+    const track = trackRef.current;
+    const sw = setWidthRef.current;
+    const moveX = currentX - dragStartX.current;
+    let newScrollLeft = dragScrollLeft.current - moveX;
+
+    // Smooth infinite wrapping during touch drag
+    if (newScrollLeft >= sw * 2) {
+      newScrollLeft -= sw;
+      dragScrollLeft.current -= sw;
+    } else if (newScrollLeft <= 0) {
+      newScrollLeft += sw;
+      dragScrollLeft.current += sw;
+    }
+
+    track.scrollLeft = newScrollLeft;
   };
 
   const onTouchEnd = () => {

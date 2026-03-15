@@ -2533,12 +2533,14 @@ section {
   .inf-fade-right {
     width: 50px;
   }
-  /* Slower, more controlled scroll on mobile */
+  /* Removed scroll-snap to prevent glitching during infinite wrap */
   .inf-track {
-    scroll-snap-type: x proximity;
+    gap: 16px;
+    padding: 20px 32px;
+    -webkit-overflow-scrolling: touch;
   }
   .inf-card {
-    scroll-snap-align: center;
+    width: min(80vw, 280px);
   }
 }
 
