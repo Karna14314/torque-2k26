@@ -1,11 +1,16 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { events } from '../data/data.js';
+import { useEffect } from 'react';
+import { events, festInfo } from '../data/data.js';
 
 const EventDetail = ({ onRegister }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const event = events.find(e => e.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!event) {
     return (
@@ -21,7 +26,7 @@ const EventDetail = ({ onRegister }) => {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
+    <div className="min-h-screen pt-12 pb-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Event Image - Full Width */}
         <motion.div
@@ -30,12 +35,12 @@ const EventDetail = ({ onRegister }) => {
           transition={{ duration: 0.6 }}
           className="w-full mb-8"
         >
-          <div className="glass-card overflow-hidden" style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div className="glass-card overflow-hidden rounded-2xl" style={{ maxWidth: '700px', margin: '0 auto' }}>
             <img
               src={event.image}
               alt={event.name}
-              className="w-full h-auto object-cover"
-              style={{ aspectRatio: '16/9' }}
+              className="w-full h-auto object-contain"
+              style={{ maxHeight: '400px', width: '100%' }}
             />
           </div>
         </motion.div>
@@ -172,13 +177,15 @@ const EventDetail = ({ onRegister }) => {
           transition={{ delay: 0.7, duration: 0.6 }}
           className="text-center"
         >
-          <button
-            className="neu-button inline-block text-lg px-8 py-4"
-            style={{ opacity: 0.6, cursor: 'not-allowed' }}
-            disabled
-          >
-            Registration Opens Soon
-          </button>
+          {festInfo.registrationOpen ? (
+            <button className="register-btn" onClick={onRegister}>
+              Register Now
+            </button>
+          ) : (
+            <button className="neu-button inline-block text-lg px-8 py-4" style={{ opacity: 0.5, cursor: 'not-allowed' }} disabled>
+              Registration Opens Soon
+            </button>
+          )}
         </motion.div>
       </div>
     </div>

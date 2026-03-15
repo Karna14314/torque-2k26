@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Home from './pages/Home.jsx';
 import EventDetail from './pages/EventDetail.jsx';
 import WorkshopDetail from './pages/WorkshopDetail.jsx';
 import OnsiteAdmin from './pages/OnsiteAdmin.jsx';
+
 import Starfield from './components/Starfield.jsx';
 import RegistrationModal from './components/RegistrationModal.jsx';
-import RegistrationClosed from './components/RegistrationClosed.jsx';
 import { festInfo } from './data/data.js';
 
 const navItems = [
@@ -141,38 +141,23 @@ function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden focus:outline-none flex flex-col items-center justify-center"
+              className="md:hidden focus:outline-none p-2 rounded-lg hover:bg-gold/10 transition-all duration-300"
               aria-label="Toggle menu"
-              style={{
-                width: '40px',
-                height: '40px',
-                gap: isMobileMenuOpen ? '0px' : '5px',
-                position: 'relative',
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-              }}
             >
-              <span style={{
-                display: 'block', width: '24px', height: '3px',
-                backgroundColor: '#d4af37', borderRadius: '2px',
-                transition: 'all 0.3s ease',
-                transform: isMobileMenuOpen ? 'rotate(45deg)' : 'none',
-                position: isMobileMenuOpen ? 'absolute' : 'relative',
-              }} />
-              <span style={{
-                display: 'block', width: '18px', height: '3px',
-                backgroundColor: '#d4af37', borderRadius: '2px',
-                transition: 'all 0.3s ease',
-                opacity: isMobileMenuOpen ? 0 : 1,
-              }} />
-              <span style={{
-                display: 'block', width: '24px', height: '3px',
-                backgroundColor: '#d4af37', borderRadius: '2px',
-                transition: 'all 0.3s ease',
-                transform: isMobileMenuOpen ? 'rotate(-45deg)' : 'none',
-                position: isMobileMenuOpen ? 'absolute' : 'relative',
-              }} />
+              <div className="relative w-6 h-5">
+                <span 
+                  className={`absolute h-0.5 w-6 bg-gold transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45' : 'rotate-0'}`}
+                  style={{ top: '0' }}
+                />
+                <span 
+                  className={`absolute h-0.5 w-5 bg-gold transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}
+                  style={{ top: '50%', left: '50%', transform: 'translateX(-50%) translateY(-50%)' }}
+                />
+                <span 
+                  className={`absolute h-0.5 w-6 bg-gold transition-all duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45' : 'rotate-0'}`}
+                  style={{ bottom: '0' }}
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -210,11 +195,11 @@ function Navigation() {
                   />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-gold"
+                    className="w-10 h-10 rounded-full bg-gold/10 hover:bg-gold/20 transition-all duration-300 flex items-center justify-center text-gold hover:text-yellow-400"
                     aria-label="Close menu"
                   >
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 h-5"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -250,50 +235,41 @@ function Navigation() {
 }
 
 function App() {
-  const [registrationItem, setRegistrationItem] = useState(null);
-  const [isOnsiteAdmin, setIsOnsiteAdmin] = useState(false);
+  const [isRegModalOpen, setIsRegModalOpen] = useState(false);
 
-  const handleRegister = (item, onsite = false) => {
-    setRegistrationItem(item);
-    setIsOnsiteAdmin(onsite === true);
+  const openRegModal = () => {
+    if (festInfo.registrationOpen) {
+      setIsRegModalOpen(true);
+    } else {
+      alert('Registration is currently closed. Please check back later.');
+    }
   };
 
   return (
-    <Router>
-      <div className="min-h-screen font-poppins relative">
-        <Starfield />
-        <Navigation />
+    <div className="min-h-screen font-poppins relative">
+      <Starfield />
+      <Navigation />
 
-        <motion.main
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Routes>
-            <Route path="/" element={<Home onRegister={handleRegister} />} />
-            <Route path="/event/:id" element={<EventDetail onRegister={handleRegister} />} />
-            <Route path="/workshop/:id" element={<WorkshopDetail onRegister={handleRegister} />} />
-            <Route path="/onsite2k26" element={<OnsiteAdmin onRegister={handleRegister} />} />
-          </Routes>
-          {registrationItem && festInfo.registrationOpen && (
-            <RegistrationModal
-              item={registrationItem}
-              showOnsite={!!isOnsiteAdmin}
-              onClose={() => {
-                setRegistrationItem(null);
-                setIsOnsiteAdmin(false);
-              }}
-            />
-          )}
-          {registrationItem && !festInfo.registrationOpen && (
-            <RegistrationClosed
-              item={registrationItem}
-              onClose={() => setRegistrationItem(null)}
-            />
-          )}
-        </motion.main>
-      </div>
-    </Router>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="pt-[100px]"
+      >
+        <Routes>
+          <Route path="/" element={<Home onRegister={openRegModal} />} />
+          <Route path="/event/:id" element={<EventDetail onRegister={openRegModal} />} />
+          <Route path="/workshop/:id" element={<WorkshopDetail onRegister={openRegModal} />} />
+          <Route path="/onsite2k26" element={<OnsiteAdmin />} />
+        </Routes>
+      </motion.main>
+
+      {/* Registration Modal */}
+      <RegistrationModal 
+        isOpen={isRegModalOpen} 
+        onClose={() => setIsRegModalOpen(false)} 
+      />
+    </div>
   );
 }
 

@@ -75,45 +75,6 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-
-      <style>{`
-        .marquee-container {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
-
-        .marquee-content {
-          display: flex;
-          animation: marquee 20s linear infinite;
-          width: fit-content;
-        }
-
-        .marquee-text {
-          padding: 0 4rem;
-          white-space: nowrap;
-          text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .marquee-content:hover {
-          animation-play-state: paused;
-        }
-
-        @media (max-width: 768px) {
-          .marquee-text {
-            padding: 0 2rem;
-          }
-        }
-      `}</style>
     </section>
   );
 };

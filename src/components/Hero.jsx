@@ -94,9 +94,9 @@ const CountdownTimer = ({ targetDate }) => {
 };
 
 // Main Hero Component
-const Hero = () => {
+const Hero = ({ onRegister }) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ paddingTop: '100px' }}>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Content Overlay */}
       <div className="relative z-10 w-full px-4 py-20">
         <motion.div
@@ -237,6 +237,18 @@ const Hero = () => {
             transition={{ delay: 1.8, duration: 0.6 }}
           >
             <CountdownTimer targetDate="2026-03-26T00:00:00+05:30" />
+          </motion.div>
+
+          {/* Register Now Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.0, duration: 0.6 }}
+            className="mt-10"
+          >
+            <button className="register-btn" onClick={onRegister}>
+              Register Now
+            </button>
           </motion.div>
         </motion.div>
       </div>

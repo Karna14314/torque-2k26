@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { festInfo } from '../data/data.js'
 
-const RegistrationClosed = ({ item, onClose }) => {
+const RegistrationClosed = ({ onClose }) => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
@@ -32,15 +32,11 @@ const RegistrationClosed = ({ item, onClose }) => {
     <div style={styles.overlay} onClick={onClose}>
       <div style={styles.box} onClick={e => e.stopPropagation()}>
 
-        <button style={styles.closeBtn} onClick={onClose}>✕</button>
+        <button style={styles.closeBtn} onClick={onClose} aria-label="Close">✕</button>
 
         <div style={styles.lock}>🔒</div>
 
         <h2 style={styles.heading}>Registration Not Open Yet</h2>
-
-        <div style={styles.badge}>
-          {item.category} · {item.name}
-        </div>
 
         <p style={styles.openLabel}>Registration opens on</p>
         <p style={styles.openDate}>{openDate}</p>
@@ -55,9 +51,7 @@ const RegistrationClosed = ({ item, onClose }) => {
           ))}
         </div>
 
-        <p style={styles.followNote}>
-          Follow us on Instagram for updates
-        </p>
+        <p style={styles.followNote}>Follow us on Instagram for updates</p>
 
         <a
           href={festInfo.socialLinks.instagram}
@@ -79,7 +73,7 @@ const styles = {
     position: 'fixed', inset: 0,
     background: 'rgba(0,0,0,0.85)',
     backdropFilter: 'blur(10px)',
-    zIndex: 100,
+    zIndex: 9999,
     display: 'flex', alignItems: 'center', justifyContent: 'center',
     padding: '16px'
   },
@@ -101,15 +95,7 @@ const styles = {
   lock: { fontSize: '3rem', marginBottom: '12px' },
   heading: {
     color: '#d4af37', fontSize: '1.4rem',
-    fontWeight: 700, marginBottom: '12px'
-  },
-  badge: {
-    display: 'inline-block',
-    background: 'rgba(212,175,55,0.08)',
-    border: '1px solid rgba(212,175,55,0.3)',
-    borderRadius: '20px', padding: '4px 14px',
-    color: '#d4af37', fontSize: '0.82rem',
-    marginBottom: '20px'
+    fontWeight: 700, marginBottom: '16px'
   },
   openLabel: {
     color: 'rgba(240,237,230,0.5)',

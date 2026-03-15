@@ -1,11 +1,16 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { workshops } from '../data/data.js';
+import { useEffect } from 'react';
+import { workshops, festInfo } from '../data/data.js';
 
 const WorkshopDetail = ({ onRegister }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const workshop = workshops.find(w => w.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!workshop) {
     return (
@@ -21,7 +26,7 @@ const WorkshopDetail = ({ onRegister }) => {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
+    <div className="min-h-screen pt-12 pb-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Workshop Image - Full Width */}
         <motion.div
@@ -30,12 +35,12 @@ const WorkshopDetail = ({ onRegister }) => {
           transition={{ duration: 0.6 }}
           className="w-full mb-8"
         >
-          <div className="glass-card overflow-hidden relative" style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div className="glass-card overflow-hidden rounded-2xl relative" style={{ maxWidth: '700px', margin: '0 auto' }}>
             <img
               src={workshop.image}
               alt={workshop.name}
-              className="w-full h-auto object-cover"
-              style={{ aspectRatio: '16/9' }}
+              className="w-full h-auto object-contain"
+              style={{ maxHeight: '400px', width: '100%' }}
             />
             <div className="absolute top-4 left-4 text-5xl">{workshop.emoji}</div>
           </div>
@@ -216,13 +221,15 @@ const WorkshopDetail = ({ onRegister }) => {
           transition={{ delay: 1.0, duration: 0.6 }}
           className="text-center"
         >
-          <button
-            className="neu-button inline-block text-lg px-8 py-4"
-            style={{ opacity: 0.6, cursor: 'not-allowed' }}
-            disabled
-          >
-            Registration Opens Soon
-          </button>
+          {festInfo.registrationOpen ? (
+            <button className="register-btn" onClick={onRegister}>
+              Register Now
+            </button>
+          ) : (
+            <button className="neu-button inline-block text-lg px-8 py-4" style={{ opacity: 0.5, cursor: 'not-allowed' }} disabled>
+              Registration Opens Soon
+            </button>
+          )}
         </motion.div>
       </div>
     </div>

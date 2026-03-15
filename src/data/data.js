@@ -11,12 +11,12 @@ export const festInfo = {
   festDate: '2026-04-15T09:00:00',
   email: '2026.torque@gmail.com',
   brochureLink: '/images/poster2k26.jpeg',
-  registrationOpen: false,
+  registrationOpen: true,
   registrationOpenDate: '2026-03-14T09:00:00',
   appsScriptUrl: 'https://script.google.com/macros/s/AKfycbxldVM2j3Qr_5WZKfAZgaC-45Hdno9lMLS6v7Kry67KCIRQEQnrWnLquSCAv8yCtXJ4pg/exec',
-  upiId: 'torque2k26@upi',
+  upiId: 'torque26@sbi',
   upiName: 'Torque 2K26',
-  upiQr: null,
+  upiQr: '/images/paymentupi/Torqueupicropped.jpeg',
   socialLinks: {
     twitter: 'https://x.com/TORQUE_2K26',
     instagram: 'https://www.instagram.com/torque_2k26?igsh=OTljbjU5bHluOWto',
@@ -46,7 +46,7 @@ export const workshops = [
     "category": "WORKSHOP",
     "emoji": "🤖",
     "tagline": "Join the next Industrial Revolution!",
-    "image": "https://www.tdk.com/en/tech-mag/sites/default/files/2024-08/robotics-in-manufactoring.jpg",
+    "image": "/images/robotics.webp",
     "description": "Master the fundamentals of robotics and automation. Learn robot kinematics, control systems, sensor integration, and programming for industrial and service robotics applications.",
     "highlights": [
       "Robot design and kinematics",
@@ -56,14 +56,8 @@ export const workshops = [
       "Build and program your own robot"
     ],
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 200,
-      "external": 500,
-      "onsite": 600
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "sections": [
       {
         "type": "list",
@@ -106,14 +100,8 @@ export const workshops = [
       "Hands-on experience with drone assembly and flight demonstration"
     ],
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 200,
-      "external": 500,
-      "onsite": 600
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "sections": [
       {
         "type": "list",
@@ -155,14 +143,8 @@ export const workshops = [
       "Hands-on experience with CNC machine operation"
     ],
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 200,
-      "external": 500,
-      "onsite": 600
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "sections": [
       {
         "type": "list",
@@ -256,14 +238,8 @@ export const events = [
     "image": "/images/chess.webp",
     "link": "subpages/event_chessmonarch.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "\"Welcome to Chess Monarch: A Celebration of Intellectual Prowess, Strategic Brilliance, and Mind-Sport Excellence!\" Join us on a journey to unleash the power of chess and crown the ultimate champion. This event is the ultimate platform for chess enthusiasts to showcase their skills, strategies, and mental agility in a battle of wits that will leave only one victorious.",
     "sections": [
       {
@@ -348,14 +324,8 @@ export const events = [
     "image": "/images/expo.webp",
     "link": "subpages/event_projectexpo.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "A Celebration of Creativity, Innovation, and Groundbreaking Ideas! Join us on a journey to unleash the power of imagination and innovation. This event is the ultimate platform for brilliant minds to showcase their cutting-edge projects, prototypes, presentations, inventions, and solutions that have the potential to transform the future.",
     "sections": [
       {
@@ -385,14 +355,8 @@ export const events = [
     "image": "/images/bridge.webp",
     "link": "subpages/event_bridge.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Are you ready to put your engineering skills to the test and build a structure that stands strong against the forces of nature? Bridge Battleground is an exciting challenge where participants must design and construct a sturdy bridge using limited materials while demonstrating their knowledge of structural mechanics and load distribution. This event combines creativity, technical expertise, and hands-on problem-solving.",
     "sections": [
       {
@@ -422,14 +386,8 @@ export const events = [
     "image": "/images/lathe.webp",
     "link": "subpages/event_lathemaster.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Think you’ve got what it takes to shape raw materials into finely crafted components? *Lathe Master* is an exciting machining competition where skill, accuracy, and creativity come together! This event challenges you to create precise mechanical parts using a lathe machine, demonstrating both your technical and creative abilities.",
     "sections": [
       {
@@ -459,14 +417,8 @@ export const events = [
     "image": "/images/race.webp",
     "link": "subpages/event_roborace.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Robo Race is an electrifying technical event designed to challenge the speed, agility, and innovation of robotic designs.",
     "sections": [
       {
@@ -501,14 +453,8 @@ export const events = [
     "image": "/images/design.webp",
     "link": "subpages/event_designfreak.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Fancy being a design geek, a blend of precise engineering with a series of creative ideas? Design Freak is a revolutionary CAD modelling competition where innovation meets engineering excellence! This event challenges you to create an elaborate 3D model in standard CAD software like AutoCAD or CATIA.",
     "sections": [
       {
@@ -542,14 +488,8 @@ export const events = [
     "image": "/images/slide.webp",
     "link": "subpages/event_slideplain.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Do you have a game-changing idea that can revolutionize the world of mechanical engineering? Slide Plain is the ultimate idea presentation competition where creativity meets technical expertise! As a part of TORQUE, this event challenges participants to present their innovative concepts with clarity, precision, and impact.",
     "sections": [
       {
@@ -579,14 +519,8 @@ export const events = [
     "image": "/images/casting.webp",
     "link": "subpages/event_castingcrowns.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Participants will demonstrate their proficiency in sand casting, a foundational foundry process in mechanical engineering. The goal is to create a flawless sand mold for a given design within the shortest time while adhering to standard practices. Competitors will be judged on speed, mold quality, and technical execution.",
     "sections": [
       {
@@ -621,14 +555,8 @@ export const events = [
     "image": "/images/engine.webp",
     "link": "subpages/event_enginemontage.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "\"Welcome to Engine Montage: A Celebration of Mechanical Skill, Precision, and Automotive Engineering!\" Join us on a journey to explore the intricacies of internal combustion engines and the art of their assembly. This event is the ultimate platform for aspiring mechanics and engineers to showcase their skills in assembling an automobile engine. Participants will gain practical experience and knowledge of engine components and their proper assembly, which is crucial for preventing engine failure.",
     "sections": [
       {
@@ -658,14 +586,8 @@ export const events = [
     "image": "/images/quiz.webp",
     "link": "subpages/event_quiz.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "Where knowledge makes mechanical maestros",
     "sections": [
       {
@@ -700,14 +622,8 @@ export const events = [
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlyyXe75bRDY0IT1bq_3tsVKwmx5hKml2xHw&s",
     "link": "subpages/cult.html",
     "registrationLink": null,
-    "prices": {
-      "internalME": 0,
-      "internalOthers": 250,
-      "external": 250,
-      "onsite": 250
-    },
-    "upiId": null,
-    "upiQr": null,
+
+
     "description": "A Spectacle of Dance and Energy!",
     "sections": [
       {
@@ -910,3 +826,46 @@ export const developers = [
     year: '2026'
   }
 ];
+
+export const packages = [
+  {
+    id: 'pass_50',
+    name: 'Individual Entry Pass',
+    price: { online: 50, onsite: 50 },
+    includes: ['Fest Entry Access', 'Explore All Events'],
+    eventsAllowed: 0,
+    workshopsAllowed: 0
+  },
+  {
+    id: 'pass_150',
+    name: 'Day Pass (Standard)',
+    price: { online: 150, onsite: 150 },
+    includes: ['1 Day Full Access', '2 Events', '1 Workshop'],
+    eventsAllowed: 2,
+    workshopsAllowed: 1
+  },
+  {
+    id: 'pass_250',
+    name: 'Day Pass (Premium)',
+    price: { online: 250, onsite: 250 },
+    includes: ['1 Day Full Access', 'Lunch Included', '2 Events', '1 Workshop'],
+    eventsAllowed: 2,
+    workshopsAllowed: 1
+  },
+  {
+    id: 'pass_400',
+    name: '2-Day Pass (Standard)',
+    price: { online: 400, onsite: 400 },
+    includes: ['2 Days Full Access', 'Lunch & Cultural Events', '2 Events', '1 Workshop'],
+    eventsAllowed: 2,
+    workshopsAllowed: 1
+  },
+  {
+    id: 'pass_500',
+    name: '2-Day Pass (Premium)',
+    price: { online: 500, onsite: 500 },
+    includes: ['2 Days Full Access', 'Food & Accommodation', '2 Events', '1 Workshop'],
+    eventsAllowed: 2,
+    workshopsAllowed: 1
+  }
+]
