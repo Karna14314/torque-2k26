@@ -23,7 +23,7 @@
 html {
   scroll-behavior: smooth;
   /* Add scroll padding to account for fixed navbar */
-  scroll-padding-top: 100px;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -317,6 +317,35 @@ body {
 
 .mt-20 {
   margin-top: 5rem;
+}
+
+/* Padding Top Utilities (Missing) */
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-32 {
+  padding-top: 8rem;
+}
+
+.pt-\[100px\] {
+  padding-top: 100px;
+}
+
+.pt-\[120px\] {
+  padding-top: 120px;
 }
 
 .text-center {
@@ -923,7 +952,7 @@ a:focus {
 #events,
 #gallery,
 #contact {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
 
 #about {

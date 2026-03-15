@@ -13,7 +13,7 @@ export const festInfo = {
   brochureLink: '/images/poster2k26.jpeg',
   registrationOpen: true,
   registrationOpenDate: '2026-03-14T09:00:00',
-  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbwMu9Zs28Rh6lQZHzfMU47WyNABRU-SPciplthIQBh2xuIoSy9__ZMTR3KEISTFU27ARg/exec',
+  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbzRNb0PxbgfPlUdcO_I1DnHYEIa54WeQLqGgSoljttqI_D9GoptQpbLglxCJH1RYveHHw/exec',
   upiId: 'torque26@sbi',
   upiName: 'Torque 2K26',
   upiQr: '/images/paymentupi/Torqueupicropped.jpeg',
@@ -823,13 +823,13 @@ export const packages = [
     id: 'pass_50',
     name: 'Individual Entry Pass',
     price: { online: 50, onsite: 50 },
-    includes: ['Fest Entry Access', 'Explore All Events'],
+    includes: ['Fest Entry Access', 'Explore All Events(No Participation)'],
     eventsAllowed: 0,
     workshopsAllowed: 0
   },
   {
     id: 'pass_150',
-    name: 'Day Pass (Standard)',
+    name: 'Day Pass (Basic)',
     price: { online: 150, onsite: 150 },
     includes: ['1 Day Full Access', '2 Events', '1 Workshop'],
     eventsAllowed: 2,
@@ -837,7 +837,7 @@ export const packages = [
   },
   {
     id: 'pass_250',
-    name: 'Day Pass (Premium)',
+    name: 'Day Pass (Standard)',
     price: { online: 250, onsite: 250 },
     includes: ['1 Day Full Access', 'Lunch Included', '2 Events', '1 Workshop'],
     eventsAllowed: 2,

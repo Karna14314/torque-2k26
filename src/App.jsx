@@ -254,7 +254,7 @@ function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="pt-[100px]"
+        className="pt-[120px]"
       >
         <Routes>
           <Route path="/" element={<Home onRegister={openRegModal} />} />
