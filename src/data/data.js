@@ -726,7 +726,7 @@ export const teamMembers = [
   */
 
   {
-    name: 'Dr.k.Dileep Kumar',
+    name: 'Dr.K.Dileep Kumar',
     role: 'Faculty Coordinator',
     year: null,
     phone: null,
