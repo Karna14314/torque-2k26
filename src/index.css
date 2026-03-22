@@ -2712,10 +2712,6 @@ section {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
-  max-width: 110px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 @media (max-width: 640px) {
