@@ -248,7 +248,7 @@ export const events = [
         "content": [
           {
             "label": "Mode",
-            "value": "Online"
+            "value": "Offline at department"
           },
           {
             "label": "Platform",
@@ -262,10 +262,7 @@ export const events = [
             "label": "Rounds",
             "value": "Seven rounds"
           },
-          {
-            "label": "Time Control",
-            "value": "15 minutes (No increment)"
-          }
+    
         ]
       },
       {
