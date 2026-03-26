@@ -226,8 +226,8 @@ const WorkshopDetail = ({ onRegister }) => {
               Register Now
             </button>
           ) : (
-            <button className="neu-button inline-block text-lg px-8 py-4" style={{ opacity: 0.5, cursor: 'not-allowed' }} disabled>
-              Registration Opens Soon
+            <button className="neu-button inline-block text-lg px-8 py-4" style={{ opacity: 0.6, cursor: 'not-allowed', color: '#ff4d4d', borderColor: '#ff4d4d' }} disabled>
+              Registration Closed
             </button>
           )}
         </motion.div>

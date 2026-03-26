@@ -11,7 +11,7 @@ export const festInfo = {
   festDate: '2026-03-26T00:00:00',
   email: '2026.torque@gmail.com',
   brochureLink: '/images/poster2k26.jpeg',
-  registrationOpen: true,
+  registrationOpen: false,
   registrationOpenDate: '2026-03-14T09:00:00',
   appsScriptUrl: 'https://script.google.com/macros/s/AKfycbzRNb0PxbgfPlUdcO_I1DnHYEIa54WeQLqGgSoljttqI_D9GoptQpbLglxCJH1RYveHHw/exec',
   upiId: 'torque26@sbi',
@@ -283,7 +283,7 @@ export const events = [
         "title": "How to Participate",
         "content": [
           "Create a Lichess account if you don't already have one.",
-          "Register for the tournament by clicking on the \"Register Now\" button above or scanning the QR code on the official Torque poster.",
+          "Registration for this tournament has been closed.",
           "Make sure to be online and ready to play at the scheduled start time for each round."
         ]
       }

@@ -241,7 +241,7 @@ function App() {
     if (festInfo.registrationOpen) {
       setIsRegModalOpen(true);
     } else {
-      alert('Registration is currently closed. Please check back later.');
+      alert('Registration has been closed for Torque 2K26.');
     }
   };
 
